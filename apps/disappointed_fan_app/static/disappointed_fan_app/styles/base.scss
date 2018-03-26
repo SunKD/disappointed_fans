@@ -1,0 +1,81 @@
+// Import modules via all.scss
+@import "modules/modules";
+
+// import helpers
+@import "helpers/buttons";
+@import "helpers/mixins";
+
+// import responsive sheets
+@import "responsive/1phone";
+@import "responsive/2tablet";
+@import "responsive/3desktop";
+
+
+.outer{
+    background: #00b09b;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(bottom, #96c93d, #00b09b);
+    background: -moz-linear-gradient(bottom, #96c93d, #00b09b);
+    background: -o-linear-gradient(bottom, #96c93d, #00b09b);
+    background: linear-gradient(to top, #96c93d, #00b09b);  /* Chrome 10-25, Safari 5.1-6 */ /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container{
+    .search {
+        z-index: 2;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        padding: 40px;
+        margin-top: 20%;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.5);
+
+    }
+
+    h1{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        font-weight: bold;
+        text-shadow: 3px 3px #6f77705e;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    }
+
+    h4{
+        text-align: center;
+    }
+
+    input{
+        text-align: center;
+    }
+
+    .btn-secondary{
+        margin-left: auto;
+        margin-right: auto;
+        width: 20%;
+        height: 50px;
+        margin-top: 30px;
+    }
+
+    .btn-info{
+        margin: 10px auto 0 auto;
+    }
+
+    .search-sm{
+        margin-bottom: 10px;
+    }
+
+    .graph-wrapper{
+        width: 100%;
+        height: 800px;
+        background-color: rgba(255, 255, 255, 0.5);
+        margin-top: 50px;
+        border-radius: 10px;
+        margin-left: -10px;
+    }
+}
+

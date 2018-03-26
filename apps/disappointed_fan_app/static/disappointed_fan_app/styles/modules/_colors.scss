@@ -1,0 +1,45 @@
+// define the colors for the page
+$blue: #04518C;
+$yellow: yellow;
+$pink: pink;
+$purple: purple;
+$green: green;
+$orange: orange;
+$red: red;
+$black: black;
+$white: white;
+$gray: gray;
+$sand: #F2D03B;
+$ocean: #47D9BF;
+$spray: #00A1D9;
+$dark-blue: #003056;
+$t-teal: #417378;
+$t-gray: #F4F7D9;
+$t-stone: #3E423A;
+$t-opal: #6C6E58;
+$t-rain: #A4CFBE;
+
+.green-bg{
+    background-color: $green;
+}
+.gray-bg{
+    background-color: $t-gray;
+}
+.blue-bg{
+    background-color: $blue;
+}
+.red-bg{
+    background-color: $red;
+}
+.yellow-bg{
+    background-color: $yellow;
+}
+.orange-bg{
+    background-color: $orange;
+}
+.black-bg{
+    background-color: $black;
+}
+.purple-bg{
+    background-color: $purple;
+}

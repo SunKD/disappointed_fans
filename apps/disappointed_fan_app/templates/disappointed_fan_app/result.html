@@ -6,6 +6,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- inclusion of compiled cssfile from SASS -->
+    <link rel="stylesheet" href="{% static '/disappointed_fan_app/styles/base.css'%}">
+    <!-- Project specfic JS and Libs -->
+    <script src="{% static '/disappointed_fan_app/js/template.js'%}"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -29,7 +34,7 @@
             </form>
         </div>
         <div class="col-lg-9">
-            <div class="graph">
+            <div class="green-bg graph-wrapper m20">
 
             </div>
         </div>

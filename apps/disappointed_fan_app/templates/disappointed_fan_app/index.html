@@ -6,36 +6,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- inclusion of compiled cssfile from SASS -->
+    <link rel="stylesheet" href="{% static '/disappointed_fan_app/styles/base.css'%}">
+    <!-- Project specfic JS and Libs -->
+    <script src="{% static '/disappointed_fan_app/js/template.js'%}"></script>
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Disappointed Fan</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-    <div class="container">
-        <form action="process" method="POST" class="center">
-            <div class="col-sm-12 col-lg-12">
-                <div class="search">
-                    {% csrf_token %}
-                    <h1>Enter Word</h1>
-                    <input type="text" name="search" class="form-control">
-                    <input type="submit" value="Go!" class="btn btn-secondary">
+    <div class="outer">
+        <div class="container">
+            <form action="process" method="POST" class="center">
+                <div class="col-sm-12 col-lg-12">
+                    <div class="search">
+                        {% csrf_token %}
+                        <h1>Enter Word</h1>
+                        <input type="text" name="search" class="form-control">
+                        <input type="submit" value="Go!" class="btn btn-secondary">
+                    </div>
                 </div>
-            </div>
-        </form>
+            </form>
+        </div>
+        <ul class="slideshow">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
-    <ul class="slideshow">
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
 </body>
 
 </html>
