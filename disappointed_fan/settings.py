@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # 'responsive',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'responsive.middleware.ResponsiveMiddleware'
 ]
 
 ROOT_URLCONF = 'disappointed_fan.urls'
@@ -61,6 +63,8 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                # 'django.core.context_processors.request',
+                # 'responsive.context_processors.device',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -120,9 +124,34 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    #'/var/www/static/',
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+# ]
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR),'static_cdn')
+# RESPONSIVE_MEDIA_QUERIES = {
+#     'small': {
+#         'verbose_name': _('Small screens'),
+#         'min_width': None,
+#         'max_width': 640,
+#     },
+#     'medium': {
+#         'verbose_name': _('Medium screens'),
+#         'min_width': 641,
+#         'max_width': 1024,
+#     },
+#     'large': {
+#         'verbose_name': _('Large screens'),
+#         'min_width': 1025,
+#         'max_width': 1440,
+#     },
+#     'xlarge': {
+#         'verbose_name': _('XLarge screens'),
+#         'min_width': 1441,
+#         'max_width': 1920,
+#     },
+#     'xxlarge': {
+#         'verbose_name': _('XXLarge screens'),
+#         'min_width': 1921,
+#         'max_width': None,
+#     }
+# }

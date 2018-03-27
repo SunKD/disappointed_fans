@@ -117,6 +117,9 @@ img {
 .ml20 {
   margin-left: 20px; }
 
+.mr20 {
+  margin-right: 20px; }
+
 .m20 {
   margin: 20px; }
 
@@ -198,25 +201,58 @@ img {
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   .large, .medium {
-    display: none; } }
+    display: none; }
+
+  .container {
+    color: white; } }
 @media only screen and (min-device-width: 481px) and (max-device-width: 1023px) {
   .small, .large {
     display: none; } }
 @media only screen and (min-device-width: 1024px) {
-  .small, .medium {
+  .small, .tablet {
     display: none; } }
-.outer {
-  background: #00b09b;
+.mobile-outer-bg {
+  background: #141E30;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(bottom, #96c93d, #00b09b);
-  background: -moz-linear-gradient(bottom, #96c93d, #00b09b);
-  background: -o-linear-gradient(bottom, #96c93d, #00b09b);
-  background: linear-gradient(to top, #96c93d, #00b09b);
+  background: -webkit-linear-gradient(to bottom, #243B55, #141E30);
   /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #243B55, #141E30);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: cover;
+  height: 100vh; }
 
+.logo {
+  font-family: 'Playball', cursive;
+  font-size: 1.5em;
+  color: white; }
+
+.container .mobile-instruct {
+  font-family: 'Unica One', cursive; }
+  .container .mobile-instruct .fa-thumbs-down {
+    font-size: 3.5em;
+    margin-top: 100px; }
+  .container .mobile-instruct h1 {
+    font-family: 'Playball', cursive;
+    font-size: 3em; }
+  .container .mobile-instruct h2 {
+    font-size: 2em;
+    margin-top: 150px;
+    margin-bottom: 30px;
+    list-style-position: inside; }
+  .container .mobile-instruct ol {
+    list-style-position: inside;
+    text-align: left;
+    font-size: 1.5em;
+    list-style-type: upper-roman;
+    margin-bottom: 30px; }
+  .container .mobile-instruct .btn {
+    font-weight: bold; }
+.container .sidebar .row {
+  margin-top: 10px; }
+.container .sidebar .selects {
+  width: 100%;
+  margin-left: 0; }
 .container .search {
   z-index: 2;
   height: 100%;
@@ -229,22 +265,15 @@ img {
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.5); }
 .container h1 {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 30px;
-  font-weight: bold;
-  text-shadow: 3px 3px #6f77705e;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif; }
+  font-family: 'Playball', cursive;
+  font-size: 4em;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 50px; }
 .container h4 {
   text-align: center; }
 .container input {
   text-align: center; }
-.container .btn-secondary {
-  margin-left: auto;
-  margin-right: auto;
-  width: 20%;
-  height: 50px;
-  margin-top: 30px; }
 .container .btn-info {
   margin: 10px auto 0 auto; }
 .container .search-sm {

@@ -1,0 +1,44 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <!-- inclusion of compiled cssfile from SASS -->
+    <link rel="stylesheet" href="{% static '/disappointed_fan_app/styles/base.css'%}">
+    <!-- Project specfic JS and Libs -->
+    <script src="{% static '/disappointed_fan_app/js/template.js'%}"></script>
+    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+        crossorigin="anonymous"></script>
+        <link href="https://fonts.googleapis.com/css?family=Playball|Unica+One" rel="stylesheet">
+    <title>Disappointed Fan</title>
+</head>
+
+<body>
+    <div class="mobile-outer-bg">
+        <div class="container">
+            <div class="row mobile-instruct">
+                <div class="col-12">
+                    <p class="tac"><span class="far fa-thumbs-down"></span></p>
+                    <h1 class="tac">Disappointed Fans...</h1>
+                    <h2 class="tac">How To Use</h2>
+                    <ol>
+                        <li class="ml20">Search Term</li>
+                        <li class="ml20">Add filters</li>
+                        <li class="ml20">No Mr.Nice Guy</li>
+                    </ol>
+                </div>
+                <a href="main" class="btn btn-default form-control ml20 mr20">Go!</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
