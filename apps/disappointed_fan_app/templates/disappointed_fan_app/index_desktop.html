@@ -12,24 +12,53 @@
     <link rel="stylesheet" href="{% static '/disappointed_fan_app/styles/base.css'%}">
     <!-- Project specfic JS and Libs -->
     <script src="{% static '/disappointed_fan_app/js/template.js'%}"></script>
-    <!-- <link rel="stylesheet" href="{% static 'css/style.css' %}"> -->
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Metal+Mania|Playball|Unica+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playball|Permanent+Marker" rel="stylesheet">
     <title>Disappointed Fan</title>
 </head>
 
 <body>
     <div class="container">
-        <form action="process" method="POST" class="center">
-            <div class="col-sm-12 col-lg-12">
-                <div class="search">
-                    {% csrf_token %}
-                    <h1>Enter Word</h1>
-                    <input type="text" name="search" class="form-control">
-                    <input type="submit" value="Go!" class="btn btn-secondary">
+        <div class="user-input">
+            <form action="process" method="POST" class="center">
+                {% csrf_token %}
+                <h2 class="tac">Are You a</h2>
+                <h1 class="tac">Disappointed Fan?</h1>
+                <div class="row selects">
+                    <select class="selectpicker form-control col-md-4" name="select1">
+                        <option>Choose Sport</option>
+                        <option>Football</option>
+                        <option>Hockey</option>
+                        <option>Soccer</option>
+                        <option>Volleyball</option>
+                        <option>Cricket</option>
+                        <option>Lacrosse</option>
+                        <option>Basketball</option>
+                        <option>Baseball</option>
+                    </select>
+                    <select class="selectpicker form-control col-md-4" name="select2">
+                        <optgroup label="NFL">
+                            <option>Arizona Cardinals</option>
+                            <option>Atlanta Falcons</option>
+                            <option>Baltimore Ravens</option>
+                            <option>Buffalo Bills</option>
+                        </optgroup>
+                        <optgroup label="MLB">
+                            <option>Baltimore Orioles</option>
+                            <option>Boston Red Sox</option>
+                            <option>Chicago White Sox</option>
+                            <option>Chicago Cubs</option>
+                            <option>Colorado Rockies</option>
+                            <option>Los Angeles Dodgers</option>
+                        </optgroup>
+                    </select>
+                    <input type="text" class="form-control col-md-4" placeholder="Curse Here" name="curse">
                 </div>
-            </div>
-        </form>
+                <div class="row">
+                    <input type="submit" class="btn form-control ml20 mr20 " value="Find out How many people has the same thought!">
+                </div>
+            </form>
+        </div>
         <ul class="slideshow">
             <li></li>
             <li></li>

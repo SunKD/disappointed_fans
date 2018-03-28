@@ -22,8 +22,8 @@
 <body>
     <nav class="navbar navbar-light" style="background-color: #243B55;">
         <h3 class="logo">Disappointed Fans</h3>
-        <a href="index">
-            <i class="far fa-question-circle ml-auto logo"></i>
+        <a href="/">
+            <p class="far fa-question-circle ml-auto logo"></p>
         </a>
     </nav>
     <div class="container">
@@ -33,11 +33,11 @@
                     {% csrf_token %}
                     <div class="row">
                         <div class="col-12">
-                            <input type="text" class="form-control" placeholder="Your word">
+                            <input type="text" class="form-control" placeholder="Your word" name="curse">
                         </div>
                     </div>
                     <div class="row selects tac">
-                        <select class="selectpicker form-control col-6 col-md-12">
+                        <select class="selectpicker form-control col-6 col-md-12" name="select1">
                             <option>Select</option>
                             <option>Football</option>
                             <option>Hockey</option>
@@ -48,7 +48,7 @@
                             <option>Basketball</option>
                             <option>Baseball</option>
                         </select>
-                        <select class="selectpicker form-control col-6 col-md-12">
+                        <select class="selectpicker form-control col-6 col-md-12" name="select1">
                             <optgroup label="NFL">
                                 <option>Arizona Cardinals</option>
                                 <option>Atlanta Falcons</option>
