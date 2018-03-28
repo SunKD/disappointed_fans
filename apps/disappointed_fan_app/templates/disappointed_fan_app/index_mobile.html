@@ -1,28 +1,5 @@
-{% load staticfiles %}
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- include jquery  -->
-    <script src="{% static '/disappointed_fan_app/libs/jquery-min.js'%}"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous">
-    <!-- inclusion of compiled cssfile from SASS -->
-    <link rel="stylesheet" href="{% static '/disappointed_fan_app/styles/base.css'%}">
-    <!-- Project specfic JS and Libs -->
-    <script src="{% static '/disappointed_fan_app/js/template.js'%}"></script>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-        crossorigin="anonymous"></script>
-    <!-- import fonts  -->
-    <link href="https://fonts.googleapis.com/css?family=Metal+Mania|Playball|Unica+One" rel="stylesheet">
-    <title>Disappointed Fans</title>
-</head>
-
-<body>
+{% extends 'disappointed_fan_app/base.html' %}
+    {% block content %}
     <div class="mobile-outer-bg">
         <div class="container">
             <div class="row mobile-instruct">
@@ -64,6 +41,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+    {% endblock %}
