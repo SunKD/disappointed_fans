@@ -53,7 +53,7 @@ def twitter_hello():
     print d1
     d1 = datetime.datetime.now() - datetime.timedelta (days = 1)
     print d1
-    
+
     # # # datetime.date(2000, 1, 31)
     # for tweet in tweepy.Cursor(api.search, q="#football",
     #                         lang="en").items():
