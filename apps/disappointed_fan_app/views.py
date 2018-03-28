@@ -9,15 +9,17 @@ import datetime
 # Create your views here
 
 def index(request):
-    return render(request, 'disappointed_fan_app/index_mobile.html')
-    # else:
-    #     return render(request, 'disappointed_fan_app/index_desktop.html')
-    twitter_hello()
-    return render(request, 'disappointed_fan_app/index.html')
+    # twitter_hello()
+    if request.user_agent.is_mobile:
+        return render(request, 'disappointed_fan_app/index_mobile.html')
+    else:
+        return render(request, 'disappointed_fan_app/index_desktop.html')
 
 def process(request):
     context={
-        "input": request.POST['search']
+        "curse": request.POST["curse"],
+        "select1": request.POST["select1"],
+        "select2": request.POST['select2']
     }
     return render(request, 'disappointed_fan_app/main.html', context)
 
@@ -25,12 +27,11 @@ def main(request):
     return render(request, 'disappointed_fan_app/main.html')
 
 def twitter_hello():
-
-    # auth = tweepy.OAuthHandler(twitter_credentials.consumer_key, twitter_credentials.consumer_secret)
-    # auth.set_access_token(twitter_credentials.access_token, twitter_credentials.access_token_secret)
+    auth = tweepy.OAuthHandler(twitter_credentials.consumer_key, twitter_credentials.consumer_secret)
+    auth.set_access_token(twitter_credentials.access_token, twitter_credentials.access_token_secret)
 
     # api = tweepy.API(auth, wait_on_rate_limit=True)
-    # # api = tweepy.API(auth)
+    api = tweepy.API(auth)
 
     # public_tweets = api.home_timeline()
     # for tweet in public_tweets:
@@ -53,6 +54,7 @@ def twitter_hello():
     print d1
     d1 = datetime.datetime.now() - datetime.timedelta (days = 1)
     print d1
+<<<<<<< HEAD
 
     # # # datetime.date(2000, 1, 31)
     # for tweet in tweepy.Cursor(api.search, q="#football",
@@ -68,6 +70,23 @@ def twitter_hello():
     #     data[year_month] = counter
     #     if len(data) >= 7:
     #         break
+=======
+    
+    # # datetime.date(2000, 1, 31)
+    for tweet in tweepy.Cursor(api.search, q="#disappointed",
+                            lang="en").items():
+        # print (tweet.created_at, tweet.text)
+        dt = tweet.created_at
+        # print tweet.created_at, dt.month, dt.year, dt.day
+        year_month = "{:04d}-{:02d}-{:02d}".format(dt.year, dt.month, dt.day)
+        # print year_month
+        counter += 1
+        if year_month not in data:
+            counter = 0
+        data[year_month] = counter
+        if len(data) >= 7:
+            break
+>>>>>>> 9a7f83897a8aad0e063b70763fc066a0c02183b9
 
     list_key = []
     for i in range(6, -1, -1):

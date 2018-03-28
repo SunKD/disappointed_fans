@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'responsive',
+    'django_user_agents',  # Detect user's screen
 ]
 
 MIDDLEWARE = [
@@ -49,7 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    # 'responsive.middleware.ResponsiveMiddleware'
+    'django_user_agents.middleware.UserAgentMiddleware',
 ]
 
 ROOT_URLCONF = 'disappointed_fan.urls'
@@ -63,8 +63,6 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                # 'django.core.context_processors.request',
-                # 'responsive.context_processors.device',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -124,34 +122,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, "static"),
-# ]
-
-# RESPONSIVE_MEDIA_QUERIES = {
-#     'small': {
-#         'verbose_name': _('Small screens'),
-#         'min_width': None,
-#         'max_width': 640,
-#     },
-#     'medium': {
-#         'verbose_name': _('Medium screens'),
-#         'min_width': 641,
-#         'max_width': 1024,
-#     },
-#     'large': {
-#         'verbose_name': _('Large screens'),
-#         'min_width': 1025,
-#         'max_width': 1440,
-#     },
-#     'xlarge': {
-#         'verbose_name': _('XLarge screens'),
-#         'min_width': 1441,
-#         'max_width': 1920,
-#     },
-#     'xxlarge': {
-#         'verbose_name': _('XXLarge screens'),
-#         'min_width': 1921,
-#         'max_width': None,
+# User Screen detection 
+# Cache backend is optional, but recommended to speed up user agent parsing
+# https://pypi.python.org/pypi/django-user_agents
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#         'LOCATION': '127.0.0.1:11211',
 #     }
 # }
+
+# Name of cache backend to cache user agents. If it not specified default
+# cache alias will be used. Set to `None` to disable caching.
+USER_AGENTS_CACHE = 'default'
