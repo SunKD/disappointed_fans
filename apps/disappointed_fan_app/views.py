@@ -54,24 +54,7 @@ def twitter_hello():
     print d1
     d1 = datetime.datetime.now() - datetime.timedelta (days = 1)
     print d1
-<<<<<<< HEAD
 
-    # # # datetime.date(2000, 1, 31)
-    # for tweet in tweepy.Cursor(api.search, q="#football",
-    #                         lang="en").items():
-    #     # print (tweet.created_at, tweet.text)
-    #     dt = tweet.created_at
-    #     # print tweet.created_at, dt.month, dt.year, dt.day
-    #     year_month = "{:04d}-{:02d}-{:02d}".format(dt.year, dt.month, dt.day)
-    #     # print year_month
-    #     counter += 1
-    #     if year_month not in data:
-    #         counter = 0
-    #     data[year_month] = counter
-    #     if len(data) >= 7:
-    #         break
-=======
-    
     # # datetime.date(2000, 1, 31)
     for tweet in tweepy.Cursor(api.search, q="#disappointed",
                             lang="en").items():
@@ -86,7 +69,6 @@ def twitter_hello():
         data[year_month] = counter
         if len(data) >= 7:
             break
->>>>>>> 9a7f83897a8aad0e063b70763fc066a0c02183b9
 
     list_key = []
     for i in range(6, -1, -1):
