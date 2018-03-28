@@ -7,14 +7,14 @@
 # page located at https://dev.twitter.com/apps (under "OAuth settings")
 
 # key1
-consumer_key = "4uas7JloSuW1RI9mIhWxJpXEl"
-consumer_secret = "jOwtevpst5HWsIDmxCBiK086Cy7V1ZXDx26yDKHIGpwKg1TcfR"
+consumer_key = "xpzALohayzshAAsw1wq8uTp9E"
+consumer_secret = "TkKJ1gRfT6ufAbaP8460SER1BDbYL19FFt7OqEd14quJy5CnbB"
 
 # The access tokens can be found on your applications's Details
 # page located at https://dev.twitter.com/apps (located
 # under "Your access token")
-access_token = "978374762350067712-WhFLN9p5MXxZ7GDWJ1YtmkoGQMJNiiz"
-access_token_secret = "h7RS3jkGSl18BAqPkuIhgxG1mhtdTJ3rKbvm6PI3sIBnU"
+access_token = "978374762350067712-jPSk4LJMUBVFSUWzlVptlWfU9Ed1wIy"
+access_token_secret = "woalPHC32ypIR8hMHMlMV7gyCOpXPh9lWUhNBfN9klyMS"
 
 # # key2
 # consumer_key = "qT6nlV564FeQc4Ue9sB0aRwDg"

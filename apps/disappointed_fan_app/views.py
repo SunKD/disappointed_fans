@@ -11,7 +11,7 @@ import datetime
 
 # Create your views here.
 def index(request):
-    twitter_hello()
+    # twitter_hello()
     return render(request, 'disappointed_fan_app/index.html')
 
 def process(request):
@@ -45,8 +45,8 @@ def twitter_hello():
     auth = tweepy.OAuthHandler(twitter_credentials.consumer_key, twitter_credentials.consumer_secret)
     auth.set_access_token(twitter_credentials.access_token, twitter_credentials.access_token_secret)
 
-    # api = tweepy.API(auth, wait_on_rate_limit=True)
-    api = tweepy.API(auth)
+    api = tweepy.API(auth, wait_on_rate_limit=True)
+    # api = tweepy.API(auth)
 
     # public_tweets = api.home_timeline()
     # for tweet in public_tweets:
