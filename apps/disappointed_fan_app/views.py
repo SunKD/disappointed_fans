@@ -22,12 +22,32 @@ def process(request):
     context={
         "curse": request.POST["curse"],
         "select1": request.POST["select1"],
-        "select2": request.POST['select2']
+        "select2": request.POST['select2'],
+        "page": "main"
     }
     return render(request, 'disappointed_fan_app/main.html', context)
 
 def main(request):
     return render(request, 'disappointed_fan_app/main.html')
+
+def data_json(request):
+    tags_data = {
+        "tag": "#football",
+        "datetweet": [
+        "2018-02-01",
+        "2018-02-02",
+        "2018-02-03",
+        "2018-02-04",
+        "2018-02-05",
+        "2018-02-06",
+        "2018-02-07"],
+    "data": [90, 322, 152, 36, 532, 512, 169]
+    }
+    response_data = {}
+    response_data['result'] = 'ok'
+    response_data['message'] = 'Successfully'
+    response_data['data'] = tags_data
+    return HttpResponse(json.dumps(tags_data), content_type="application/json")
 
 def twitter_hello():
     auth = tweepy.OAuthHandler(twitter_credentials.consumer_key, twitter_credentials.consumer_secret)
