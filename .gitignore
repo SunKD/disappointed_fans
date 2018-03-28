@@ -153,4 +153,5 @@ Thumbs.db
 # Sass Ignores #
 ################
 .sass-cache/
+.scssc
 *.css.map
