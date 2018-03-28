@@ -9,16 +9,17 @@ import datetime
 # Create your views here
 
 def index(request):
-    
-    # else:
-    #     return render(request, 'disappointed_fan_app/index_desktop.html')
     # twitter_hello()
-    return render(request, 'disappointed_fan_app/index_mobile.html')
-    # return render(request, 'disappointed_fan_app/index.html')
+    if request.user_agent.is_mobile:
+        return render(request, 'disappointed_fan_app/index_mobile.html')
+    else:
+        return render(request, 'disappointed_fan_app/index_desktop.html')
 
 def process(request):
     context={
-        "input": request.POST['search']
+        "curse": request.POST["curse"],
+        "select1": request.POST["select1"],
+        "select2": request.POST['select2']
     }
     return render(request, 'disappointed_fan_app/main.html', context)
 
@@ -26,7 +27,6 @@ def main(request):
     return render(request, 'disappointed_fan_app/main.html')
 
 def twitter_hello():
-    print "Hello???"
     auth = tweepy.OAuthHandler(twitter_credentials.consumer_key, twitter_credentials.consumer_secret)
     auth.set_access_token(twitter_credentials.access_token, twitter_credentials.access_token_secret)
 
