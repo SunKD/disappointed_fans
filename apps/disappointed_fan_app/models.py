@@ -48,6 +48,24 @@ class UserSearch(models.Model):
     allowed = models.SmallIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    objects = UserSearchManager
+    team = models.ForeignKey('Team', related_name='searches')
+    objects = UserSearchManager()
     def __repr__(self):
-        return "Word Desc = word: {} - Allowed? {} - created_at: {}".format(self.search_data, self.allowed, self.created_at)
+        return "Search Desc = keyword: {} - Allowed? {} - created_at: {}".format(self.search_data, self.allowed, self.created_at)
+
+class Sport(models.Model):
+    name = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    # objects = SportManager()
+    def __repr__(self):
+        return "Sport = name: {} - created_at: {}".format(self.name, self.created_at)
+
+class Team(models.Model):
+    name = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    sport = models.ForeignKey('Sport', related_name='teams')
+    # objects = TeamManager()
+    def __repr__(self):
+        return "Team = name: {} - created_at: {}".format(self.name, self.created_at)

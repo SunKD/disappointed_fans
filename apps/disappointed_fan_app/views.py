@@ -9,6 +9,8 @@ import tweepy
 import twitter_credentials
 import datetime
 
+from models import UserSearch
+
 # Create your views here
 
 def index(request):
@@ -18,8 +20,8 @@ def index(request):
     else:
         return render(request, 'disappointed_fan_app/index_desktop.html')
 
-def process(request):
-    response = User_Search.objects.user_input_validator(request.POST)
+def process(request, postData):
+    response = UserSearch.objects.user_input_validator(request.POST)
     print response
     return render(request, 'disappointed_fan_app/main.html')
 
