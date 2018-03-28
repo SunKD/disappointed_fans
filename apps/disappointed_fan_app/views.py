@@ -19,13 +19,9 @@ def index(request):
         return render(request, 'disappointed_fan_app/index_desktop.html')
 
 def process(request):
-    context={
-        "curse": request.POST["curse"],
-        "select1": request.POST["select1"],
-        "select2": request.POST['select2'],
-        "page": "main"
-    }
-    return render(request, 'disappointed_fan_app/main.html', context)
+    response = User_Search.objects.user_input_validator(request.POST)
+    print response
+    return render(request, 'disappointed_fan_app/main.html')
 
 def main(request):
     return render(request, 'disappointed_fan_app/main.html')

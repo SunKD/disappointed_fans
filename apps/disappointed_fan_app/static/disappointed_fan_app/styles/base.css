@@ -327,8 +327,6 @@ img {
   .container .sidebar .selects {
     margin-left: 0;
     margin-right: 0; }
-<<<<<<< HEAD
-=======
   .container .content .graph-wrapper {
     width: 100%;
     height: 800px;
@@ -336,7 +334,6 @@ img {
     margin-top: 50px;
     border-radius: 10px;
     margin-left: -10px; }
->>>>>>> validation_start
   .container .user-input {
     z-index: 2;
     position: relative;
