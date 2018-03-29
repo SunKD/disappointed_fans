@@ -22,22 +22,25 @@
 
 
 .logo {
-    font-family: 'Playball', cursive;
+    // font-family: 'Playball', cursive;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
     font-size: 1.5em;
     color: white;
 }
 
 .container{
-    position: absolute;
+    position: relative;
     top: 0;
     .mobile-instruct{
-        font-family: 'Unica One', cursive;
+        // font-family: 'Unica One', cursive;
+        font-family: serif, cursive;
         .fa-thumbs-down{
             font-size: 3.5em;
             margin-top: 65px;
         }
         h1{
-            font-family: 'Playball', cursive;
+            // font-family: 'Playball', cursive;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
             font-size: 3em;
             margin-bottom: 50px;
         }
@@ -45,7 +48,8 @@
             margin: 50px 0 0px 0;
         }
         h2:first-of-type{
-            font-family: 'Playball', cursive;
+            // font-family: 'Playball', cursive;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
             font-size: 2.3em;
             margin-bottom: 48px;
             line-height: 45px;
@@ -61,15 +65,10 @@
         }
 
         h2:last-of-type{
-            margin-bottom: 110px;
+            margin-bottom: 178px;
         }
         .btn{
             font-weight: bold;
-        }
-        .metal-font{
-            font-family: 'Metal Mania', cursive;
-            font-weight: 500;
-            letter-spacing: 0.1em;
         }
         .anchor{
             position: absolute;
@@ -102,7 +101,8 @@
                 margin-bottom: 10px;
             }
             h2:first-of-type{
-                font-family: 'Unica One', cursive;
+                // font-family: 'Unica One', cursive;
+                font-family: serif, cursive;
                 font-size: 1.5em;
                 line-height: 1em;
                 margin: 15px 0;
@@ -115,9 +115,6 @@
                 span{
                     color: #C00;
                 }
-            }
-            p:last-of-type{
-                color: #c00;
             }
         }
         button{
@@ -166,19 +163,21 @@
     .user-input {
         z-index: 2;
         position: relative;
-        padding: 40px;
+        padding: 20px;
         margin-top: 10%;
-        font-family: 'Permanent Marker', cursive;
+        // font-family: 'Permanent Marker', cursive;
+        font-family: Arial, sans-serif, cursive;
+        font-weight: 900;
         color: white;
         text-shadow: 5px 5px #292828;
 
         h1{
             font-size: 6em;
             margin-top: 20px;
-            margin-bottom: 150px;
         }
-
         h2{
+            margin-top: 20px;
+            margin-bottom: 150px;
             font-size: 2em;
         }
 

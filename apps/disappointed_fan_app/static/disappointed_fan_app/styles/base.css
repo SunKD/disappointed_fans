@@ -232,26 +232,26 @@ img {
   height: 100vh; }
 
 .logo {
-  font-family: 'Playball', cursive;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
   font-size: 1.5em;
   color: white; }
 
 .container {
-  position: absolute;
+  position: relative;
   top: 0; }
   .container .mobile-instruct {
-    font-family: 'Unica One', cursive; }
+    font-family: serif, cursive; }
     .container .mobile-instruct .fa-thumbs-down {
       font-size: 3.5em;
       margin-top: 65px; }
     .container .mobile-instruct h1 {
-      font-family: 'Playball', cursive;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
       font-size: 3em;
       margin-bottom: 50px; }
     .container .mobile-instruct img {
       margin: 50px 0 0px 0; }
     .container .mobile-instruct h2:first-of-type {
-      font-family: 'Playball', cursive;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
       font-size: 2.3em;
       margin-bottom: 48px;
       line-height: 45px; }
@@ -263,13 +263,9 @@ img {
       text-align: left;
       font-size: 1.5em; }
     .container .mobile-instruct h2:last-of-type {
-      margin-bottom: 110px; }
+      margin-bottom: 178px; }
     .container .mobile-instruct .btn {
       font-weight: bold; }
-    .container .mobile-instruct .metal-font {
-      font-family: 'Metal Mania', cursive;
-      font-weight: 500;
-      letter-spacing: 0.1em; }
     .container .mobile-instruct .anchor {
       position: absolute;
       top: 507px;
@@ -297,7 +293,7 @@ img {
         color: #003056;
         margin-bottom: 10px; }
       .container .mobile-instruct .mover-box h2:first-of-type {
-        font-family: 'Unica One', cursive;
+        font-family: serif, cursive;
         font-size: 1.5em;
         line-height: 1em;
         margin: 15px 0; }
@@ -307,8 +303,6 @@ img {
         margin-bottom: 5px; }
         .container .mobile-instruct .how-answer p span {
           color: #C00; }
-      .container .mobile-instruct .how-answer p:last-of-type {
-        color: #c00; }
     .container .mobile-instruct button {
       background-color: #F4F7D9;
       border-radius: 3px;
@@ -337,16 +331,18 @@ img {
   .container .user-input {
     z-index: 2;
     position: relative;
-    padding: 40px;
+    padding: 20px;
     margin-top: 10%;
-    font-family: 'Permanent Marker', cursive;
+    font-family: Arial, sans-serif, cursive;
+    font-weight: 900;
     color: white;
     text-shadow: 5px 5px #292828; }
     .container .user-input h1 {
       font-size: 6em;
-      margin-top: 20px;
-      margin-bottom: 150px; }
+      margin-top: 20px; }
     .container .user-input h2 {
+      margin-top: 20px;
+      margin-bottom: 150px;
       font-size: 2em; }
     .container .user-input .row {
       margin-top: 10px; }

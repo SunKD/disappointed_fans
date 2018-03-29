@@ -17,23 +17,29 @@ class UserSearchManager(models.Manager):
 
     def user_input_validator(self, postData):
         # used to validate the words that users enter
-        # validation  -
-        search_data = postData['curse']
+        validate_response = {
+            'status': False,
+            'errors': {}
+        }
+        search_data = postData["curse"]
+        print 'search Keyword - ', search_data
         errors = {}
-        if len(search_data):
+        print "in user_input_validator"
+        if len(search_data) < 1:
             errors['need_data'] = "Please enter a valid keyword - must be at least 1 character long."
         elif not SEARCH_DATA_RE.match(search_data):
             errors['bad_characters'] = "Please enter a valid keyword - no special characters and leave off the #."
         if len(search_data) > 100:
             errors['many_data'] = "Please enter a valid keyword - something less than 100 characters"
+        print 'Errors - ', errors
+
+        if len(errors):
+            validate_response['errors'] = errors
         else:
+            validate_response['status'] = True
             print "successful validation of user entry"
-            user_data = {
-                'search_data': search_data,
-                'sport': postData['sport'],
-                'team': postData['team']
-            }
-            return user_data
+        print "Validate Response Object", validate_response
+        return validate_response
 
     def reject_word(self):
         # used to check if word is already in DB as rejected word based on the "allowed" stored data attribute. Boolean.

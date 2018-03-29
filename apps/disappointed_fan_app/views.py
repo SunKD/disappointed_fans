@@ -20,10 +20,24 @@ def index(request):
     else:
         return render(request, 'disappointed_fan_app/index_desktop.html')
 
-def process(request, postData):
+def process(request):
     response = UserSearch.objects.user_input_validator(request.POST)
-    print response
-    return render(request, 'disappointed_fan_app/main.html')
+    if not response['status']:
+        print "in process error response"
+        return render(request, 'disappointed_fan_app/index_desktop.html')
+    else:
+        print "in process valid response"
+        return render(request, 'disappointed_fan_app/main.html')
+
+def process_main(request):
+    response = UserSearch.objects.user_input_validator(request.POST)
+    if not response['status']:
+        print "in process error response"
+        return render(request, 'disappointed_fan_app/main.html')
+    else:
+        print "in process valid response"
+        return render(request, 'disappointed_fan_app/main.html')
+
 
 def main(request):
     return render(request, 'disappointed_fan_app/main.html')
