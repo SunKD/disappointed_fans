@@ -46,6 +46,7 @@ def data_json(request):
             "2018-02-07"],
         "data": [90, 322, 152, 136, 532, 512, 169]
         }
+        
         tags_data = search_tweet(request.POST['curse'].strip())
         response_data = {}
         response_data['result'] = 'ok'
@@ -67,8 +68,8 @@ def twitter2():
     # print api.VerifyCredentials()
     keywords_done = ['MLS', 'NBA', 'NHL']
     keywords_done = ['Badminton', 'Biribol', 'Bossaball', 'Hiking', 'Seven-ball']
-    keywords_done = ['soccer fan']
-    keywords = ['dota']
+    keywords_done = ['soccer fan', 'dota']
+    keywords = ['Tennis']
 
     for word in keywords:
         # results = api.GetSearch(raw_query="q=seahawk")
