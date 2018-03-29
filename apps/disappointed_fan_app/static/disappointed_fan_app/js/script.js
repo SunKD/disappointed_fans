@@ -5,7 +5,7 @@ d3.json(url, function(d) {
   var tagscounter = [],
       dates = [],
       margin = { top: 0, right: 0, bottom: 30, left: 20 },
-      height =  window.innerHeight * (5/10),
+      height =  window.innerHeight * (7/10),
       width = window.innerWidth * (5/10);
       // innerRadius = Math.min(width,height)/3,
       // outerRadius = innerRadius + 30;
@@ -151,3 +151,16 @@ $(document).ready(function(){
       }
   })
 });
+<<<<<<< HEAD
+||||||| merged common ancestors
+||||||| merged common ancestors
+  console.log('ready');
+});
+=======
+  console.log('ready');
+});
+
+>>>>>>> main_graph
+=======
+  console.log('ready');
+>>>>>>> sportdb

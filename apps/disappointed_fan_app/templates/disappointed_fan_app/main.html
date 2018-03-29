@@ -1,60 +1,27 @@
-{% extends 'disappointed_fan_app/base.html' %}
-    {% block content %}
-    <nav class="navbar navbar-light" style="background-color: #243B55;">
-        <h3 class="logo">Disappointed Fans</h3>
-        <a href="/">
-            <p class="far fa-question-circle ml-auto logo"></p>
-        </a>
-    </nav>
-    <div class="container">
-        <div class="row">
-            <div class="sidebar col-md-4 col-12">
-                <form action="process_main" method="POST">
-                    {% csrf_token %}
-                    <div class="row selects tac">
-                        <div class="col-6 col-md-12 mb10">
-                            <select class="selectpicker form-control" name="sport">
-                                <option>Select</option>
-                                <option>Football</option>
-                                <option>Hockey</option>
-                                <option>Soccer</option>
-                                <option>Volleyball</option>
-                                <option>Cricket</option>
-                                <option>Lacrosse</option>
-                                <option>Basketball</option>
-                                <option>Baseball</option>
-                            </select>
-                        </div>
-                        <div class="col-6 col-md-12">
-                            <select class="selectpicker form-control" name="team">
-                                <optgroup label="NFL">
-                                    <option>Arizona Cardinals</option>
-                                    <option>Atlanta Falcons</option>
-                                    <option>Baltimore Ravens</option>
-                                    <option>Buffalo Bills</option>
-                                </optgroup>
-                                <optgroup label="MLB">
-                                    <option>Baltimore Orioles</option>
-                                    <option>Boston Red Sox</option>
-                                    <option>Chicago White Sox</option>
-                                    <option>Chicago Cubs</option>
-                                    <option>Colorado Rockies</option>
-                                    <option>Los Angeles Dodgers</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <input type="text" class="form-control" placeholder="Your word" name="curse">
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <input type="submit" class="btn btn-secondary form-control " value="Go!">
-                        </div>
-                    </div>
-                </form>
+{% extends 'disappointed_fan_app/base.html' %} {% block content %}
+<nav class="navbar navbar-light" style="background-color: #243B55;">
+    <h3 class="logo">ESDN</h3>
+    <a href="/">
+        <p class="far fa-question-circle ml-auto logo"></p>
+    </a>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="sidebar col-md-4 col-12">
+            <form action="process_main" method="POST">
+                {% csrf_token %}
+                <div class="row selects tac">
+                    <select class="selectpicker form-control col-6 col-md-12" name="sport">
+                        <option>Baseball</option>
+                        <option>Soccer</option>
+                        <option>Hockey</option>
+                    </select>
+                    <select class="selectpicker form-control col-6 col-md-12" name="team">
+                        {% for team in baseball %}
+                        <option>{{team.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
                 <div class="row">
                     <div class="col-12">
                         <div class="twitterfeed large">
@@ -66,16 +33,10 @@
             </div>
         </div>
         <div class="content col-md-8 col-12">
-            <h1 class="graph-title col-md-col-12 tac">{{curse}}</h1>
-            <div class="green-bg graph-wrapper m20">
+            <h2 class="graph-title col-md-col-12 tac">{{curse}}</h2>
+            <div class="graph-wrapper m20">
                 <div id="viz"></div>
             </div>
         </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> validation_visuals
     </div>
-
-</div>
 {% endblock %}

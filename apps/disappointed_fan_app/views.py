@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render, HttpResponse, redirect
 from django.core import serializers
 import json
+from models import *
 
 import tweepy
 import twitter_credentials
@@ -15,10 +16,16 @@ from models import UserSearch
 
 def index(request):
     # twitter_hello()
+    print Team.objects.all()
+    context = {
+        "baseball" : Team.objects.filter(sport_id = 1),
+        "soccor": Team.objects.filter(sport_id = 2),
+        "hockey": Team.objects.filter(sport_id = 3)
+    }
     if request.user_agent.is_mobile:
         return render(request, 'disappointed_fan_app/index_mobile.html')
     else:
-        return render(request, 'disappointed_fan_app/index_desktop.html')
+        return render(request, 'disappointed_fan_app/index_desktop.html', context)
 
 def process(request):
     response = UserSearch.objects.user_input_validator(request.POST)
