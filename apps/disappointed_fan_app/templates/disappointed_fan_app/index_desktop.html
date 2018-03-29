@@ -1,56 +1,58 @@
-
-{% extends 'disappointed_fan_app/base.html' %}
-    {% block content %}
-    <div class="container">
-        <div class="user-input">
-            <form action="process" method="POST" class="center">
-                {% csrf_token %}
-                <h2 class="tac">Are You a</h2>
-                <h1 class="tac">Disappointed Fan?</h1>
-                <div class="row selects">
-                    <select class="selectpicker form-control col-md-4" name="select1">
-                        <option>Choose Sport</option>
-                        <option>Football</option>
-                        <option>Hockey</option>
-                        <option>Soccer</option>
-                        <option>Volleyball</option>
-                        <option>Cricket</option>
-                        <option>Lacrosse</option>
-                        <option>Basketball</option>
-                        <option>Baseball</option>
-                    </select>
-                    <select class="selectpicker form-control col-md-4" name="select2">
-                        <optgroup label="NFL">
-                            <option>Arizona Cardinals</option>
-                            <option>Atlanta Falcons</option>
-                            <option>Baltimore Ravens</option>
-                            <option>Buffalo Bills</option>
-                        </optgroup>
-                        <optgroup label="MLB">
-                            <option>Baltimore Orioles</option>
-                            <option>Boston Red Sox</option>
-                            <option>Chicago White Sox</option>
-                            <option>Chicago Cubs</option>
-                            <option>Colorado Rockies</option>
-                            <option>Los Angeles Dodgers</option>
-                        </optgroup>
-                    </select>
-                    <input type="text" class="form-control col-md-4" placeholder="Curse Here" name="curse">
-                </div>
-                <div class="row">
-                    <input type="submit" class="btn form-control ml20 mr20 " value="Find out How many people has the same thought!">
-                </div>
-            </form>
-        </div>
-        <ul class="slideshow">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
+{% extends 'disappointed_fan_app/base.html' %} 
+{% block content %}
+<div class="container">
+    <div class="user-input">
+        <form action="process" method="POST" class="center">
+            {% csrf_token %}
+            <h2 class="tac">Are You a</h2>
+            <h1 class="tac">Disappointed Fan?</h1>
+            <div class="row selects">
+                <select class="selectpicker form-control col-md-3" name="select1">
+                    <option>Choose Sport</option>
+                    <option>Football</option>
+                    <option>Hockey</option>
+                    <option>Soccer</option>
+                    <option>Volleyball</option>
+                    <option>Cricket</option>
+                    <option>Lacrosse</option>
+                    <option>Basketball</option>
+                    <option>Baseball</option>
+                </select>
+                <div class="col-md-1"></div>
+                <select class="selectpicker form-control col-md-3" name="select2">
+                    <optgroup label="NFL">
+                        <option>Arizona Cardinals</option>
+                        <option>Atlanta Falcons</option>
+                        <option>Baltimore Ravens</option>
+                        <option>Buffalo Bills</option>
+                    </optgroup>
+                    <optgroup label="MLB">
+                        <option>Baltimore Orioles</option>
+                        <option>Boston Red Sox</option>
+                        <option>Chicago White Sox</option>
+                        <option>Chicago Cubs</option>
+                        <option>Colorado Rockies</option>
+                        <option>Los Angeles Dodgers</option>
+                    </optgroup>
+                </select>
+                <div class="col-md-1"></div>
+                <input type="text" class="form-control col-md-3" placeholder="Curse Here" name="curse">
+            </div>
+            <div class="row">
+                <input type="submit" class="btn form-control ml20 mr20 " value="Find out How many people has the same thought!">
+            </div>
+        </form>
     </div>
-    {% endblock %}
+
+    <ul class="slideshow">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+{% endblock %}

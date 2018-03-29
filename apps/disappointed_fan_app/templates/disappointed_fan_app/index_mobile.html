@@ -1,44 +1,44 @@
-{% extends 'disappointed_fan_app/base.html' %}
-    {% block content %}
-    <div class="mobile-outer-bg">
-        <div class="container">
-            <div class="row mobile-instruct">
-                <div class="col-12">
-                    <div class="tac">
-                        <!-- <span class="far fa-thumbs-down"></span> -->
-                        <img src="{% static '/disappointed_fan_app/images/esdn_logo.png'%}" alt="">
-                    </div>
-                    <h2 class="tac">Entertainment Sports Disappointment Network</h2>
-                    <h2 class="tac">Are you frustrated that your braket fell apart?</h2>
-                    <h2 class="tac">Do you want to watch your rivals cry about a fair call?</h2>
-                    <h2 class="tac">You're in the right place</h2>
-                    <div class="anchor1">
-                        <div class="why-answer mover-box" id="why-data">
-                            <h1 class="tac">Why you ask?</h1>
-                            <h2 class="tac">Because not everyone loves sports.</h2>
-                            <h2 class="tac">Because some people enjoy watching others lose.</h2>
-                            <h2 class="tac">Because sadness needs a home.</h2>
-                        </div>
-                    </div>
-                    <div class="how-answer mover-box" id="how-data">
-                        <p><span>#1</span> No puppies, kittens, rainbows or general feel goodery. Ever. Seriously, we filter what you can search.</p>
-                        <p><span>#2</span> Choose a term to search</p>
-                        <p><span>#3</span> Use filters or add another term</p>
-                        <p class="tac"> Prepare to bask in the sorrow of your rivals</p>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <button class="btn btn-default btn-l" id="how">How?</button>
-                        </div>
-                        <div class="col-6 btn-r">
-                            <button class="btn btn-default " id="why">Why?</button>
-                        </div>
-                    </div>
-
-
+{% extends 'disappointed_fan_app/base.html' %} {% block content %}
+<div class="mobile-outer-bg">
+    <div class="container">
+        <div class="row mobile-instruct">
+            <div class="col-12">
+                <div class="tac">
+                    <span class="far fa-thumbs-down"></span>
                 </div>
-                <a href="main" class="btn btn-default form-control ml20 mr20"> LET ME IN!</a>
+                <h2 class="tac">Entertainment Sports Disappointment Network</h2>
+                <h2 class="tac">Are you frustrated that your braket fell apart?</h2>
+                <h2 class="tac">Do you want to watch your rivals cry about a fair call?</h2>
+                <h2 class="tac">You're in the right place</h2>
+                <div class="anchor1">
+                    <div class="why-answer mover-box" id="why-data">
+                        <h1 class="tac">Why you ask?</h1>
+                        <h2 class="tac">Because not everyone loves sports.</h2>
+                        <h2 class="tac">Because some people enjoy watching others lose.</h2>
+                        <h2 class="tac">Because sadness needs a home.</h2>
+                    </div>
+                </div>
+                <div class="how-answer mover-box" id="how-data">
+                    <p>
+                        <span>#1</span> No puppies, kittens, rainbows or general feel goodery. Ever. Seriously, we filter what
+                        you can search.</p>
+                    <p>
+                        <span>#2</span> Choose a term to search</p>
+                    <p>
+                        <span>#3</span> Use filters or add another term</p>
+                    <p class="tac"> Prepare to bask in the sorrow of your rivals</p>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-default btn-l" id="how">How?</button>
+                    </div>
+                    <div class="col-6 btn-r">
+                        <button class="btn btn-default " id="why">Why?</button>
+                    </div>
+                </div>
             </div>
+            <a href="main" class="btn btn-default form-control ml20 mr20"> LET ME IN!</a>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}

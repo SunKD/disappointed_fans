@@ -20,8 +20,8 @@ def index(request):
 
 def process(request):
     context={
-        "curse": request.POST["curse"],
-        "select1": request.POST["select1"],
+        "curse": request.POST['curse'],
+        "select1": request.POST['select1'],
         "select2": request.POST['select2'],
         "page": "main"
     }

@@ -4,9 +4,14 @@ d3.json(url, function(d) {
 
   var tagscounter = [],
       dates = [],
-      margin = { top: 0, right: 0, bottom: 30, left: 20 }
-      height = 200 - margin.top - margin.bottom,
-      width = 300 - margin.left - margin.right;
+      margin = { top: 0, right: 0, bottom: 30, left: 20 },
+      height =  window.innerHeight * (5/10),
+      width = window.innerWidth * (5/10);
+      // innerRadius = Math.min(width,height)/3,
+      // outerRadius = innerRadius + 30;
+      // height = 200 - margin.top - margin.bottom,
+      // width = 300 - margin.left - margin.right;
+      
 
   var   tempColor,
         yScale,
@@ -122,6 +127,9 @@ d3.json(url, function(d) {
 
 }); // json import
 
+
+
 $(document).ready(function(){
   console.log('ready');
 });
+

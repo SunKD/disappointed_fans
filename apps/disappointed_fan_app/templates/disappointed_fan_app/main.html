@@ -11,11 +11,6 @@
             <div class="sidebar col-md-4 col-12">
                 <form action="process" method="POST">
                     {% csrf_token %}
-                    <div class="row">
-                        <div class="col-12">
-                            <input type="text" class="form-control" placeholder="Your word" name="curse">
-                        </div>
-                    </div>
                     <div class="row selects tac">
                         <select class="selectpicker form-control col-6 col-md-12" name="select1">
                             <option>Select</option>
@@ -46,23 +41,26 @@
                         </select>
                     </div>
                     <div class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control" placeholder="Your word" name="curse">
+                        </div>
+                    </div>
+                    <div class="row">
                         <input type="submit" class="btn btn-secondary form-control ml20 mr20 " value="Go!">
                     </div>
                 </form>
                 <div class="twitterfeed large">
-                    <a class="twitter-timeline" data-width="300" data-height="600" href="https://twitter.com/TwitterSports?ref_src=twsrc%5Etfw">Tweets by TwitterSports</a>
+                    <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/TwitterSports?ref_src=twsrc%5Etfw">Tweets by TwitterSports</a>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
-
-
-        </div>
-        <div class="content col-md-8 col-12">
-            <div class="green-bg graph-wrapper m20">
-                {{page}}
-                <div id="viz"></div>
+            <div class="content col-md-8 col-12">
+                <div class="green-bg graph-wrapper m20">
+                    <div class="graph-title col-md-col-12">{{curse}}</div>
+                    <div id="viz"></div>
+                </div>
             </div>
         </div>
-
+    
     </div>
     {% endblock %}
