@@ -23,7 +23,7 @@
 
 .logo {
     // font-family: 'Playball', cursive;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
+    font-family: 'Holtwood One SC', serif;
     font-size: 1.5em;
     color: white;
 }
@@ -137,36 +137,23 @@
         }
     }
 
-    .sidebar{
-        // wrapper for the sidebar
-        .row{
-            margin-top: 10px;
-        }
-        .twitterfeed{
-            margin: 0 auto;
-            padding: 0 0 0 25px;
-        }
-
-    }
-
     .user-input {
         z-index: 2;
         position: relative;
         padding: 20px;
         margin-top: 10%;
-        // font-family: 'Permanent Marker', cursive;
-        font-family: Arial, sans-serif, cursive;
+        font-family: 'Holtwood One SC', serif;
         font-weight: 900;
         color: white;
-        text-shadow: 5px 5px #292828;
+        text-shadow: 5px 5px 4px #292828;
 
         h1{
-            font-size: 6em;
+            font-size: 8em;
             margin-top: 20px;
         }
         h2{
+            color: rgb(240, 239, 239);
             margin-top: 20px;
-            margin-bottom: 110px;
             font-size: 2em;
         }
         .error-box{
@@ -193,12 +180,21 @@
         .btn{
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
             background-color: #243B55;
+            height: 50px;
             color: white;
+            font-size: 1.2em;
+        }
+
+        .network{
+            margin-top: -10px;
+            margin-bottom: 100px;
         }
     }
+
     .blue-btn{
         background-color: #243B55;
         color: white;
+        margin-top: 10px;
     }
 
     #baseball{
