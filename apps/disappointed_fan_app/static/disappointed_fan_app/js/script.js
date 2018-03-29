@@ -4,7 +4,7 @@ d3.json(url, function(d) {
 
   var tagscounter = [],
       dates = [],
-      margin = { top: 0, right: 0, bottom: 30, left: 20 },
+      margin = { top: 0, right: 0, bottom: 30, left: 30 },
       height =  window.innerHeight * (7/10),
       width = window.innerWidth * (5/10);
       // innerRadius = Math.min(width,height)/3,
@@ -88,28 +88,28 @@ d3.json(url, function(d) {
         tooltip.transition().duration(200)
           .style('opacity', .9)
         tooltip.html(
-          '<div style="font-size: 2rem; font-weight: bold">' +
+          '<div style="font-size: 14px; font-weight: normal">' +
             d + '</div>'
         )
           .style('left', (d3.event.pageX -35) + 'px')
           .style('top', (d3.event.pageY -30) + 'px')
         tempColor = this.style.fill;
-        d3.select(this)
-          .style('fill', 'yellow')
+        // d3.select(this)
+        //   .style('fill', 'yellow')
       })
 
       .on('mouseout', function(d) {
         tooltip.html('')
-        d3.select(this)
-          .style('fill', tempColor)
+        // d3.select(this)
+        //   .style('fill', tempColor)
       });
 
   yGuide = d3.select('#viz svg').append('g')
-            .attr('transform', 'translate(20,0)')
+            .attr('transform', 'translate(30,0)')
             .call(yAxisTicks)
 
   xGuide = d3.select('#viz svg').append('g')
-            .attr('transform', 'translate(20,'+ height + ')')
+            .attr('transform', 'translate(30,'+ height + ')')
             .call(xAxisTicks)
 
   myChart.transition()

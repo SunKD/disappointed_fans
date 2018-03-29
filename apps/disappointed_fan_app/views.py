@@ -9,6 +9,7 @@ import json
 import tweepy
 import twitter_credentials
 import datetime
+import time
 import twitter
 from models import Tw_Data
 
@@ -36,28 +37,30 @@ def index(request):
 def process(request):
     print "In Process Route"
     response = UserSearch.objects.user_input_validator(request.POST)
+    context={
+        "curse": "#" + request.POST['index_curse'],
+        "select1": request.POST.get('select1'),
+        "select2": request.POST.get('select2'),
+        "page": "index",
+        "context": {
+            "Baseball" : Team.objects.filter(sport_id = 1),
+            "Soccer": Team.objects.filter(sport_id = 2),
+            "Hockey": Team.objects.filter(sport_id = 3),
+            "Basketball": Team.objects.filter(sport_id = 4)
+        }
+    }
+    request.session['curse'] = request.POST.get('index_curse')
     if not response['status']:
         for tag, error in response['errors'].iteritems():
             messages.error(request, error)
-        return render(request, 'disappointed_fan_app/index_desktop.html')
+        return render(request, 'disappointed_fan_app/index_desktop.html', context)
     else:
         print "in process valid response"
-        context={
-            "curse": "#" + request.POST['index_curse'],
-            "select1": request.POST.get('select1'),
-            "select2": request.POST.get('select2'),
-            "page": "index"
-        }
         return render(request, 'disappointed_fan_app/main.html', context)
 
 def process_main(request):
     print "In Process_Main Route"
     response = UserSearch.objects.user_input_validator(request.POST)
-    if not response['status']:
-        for tag, error in response['errors'].iteritems():
-            messages.error(request, error)
-        return render(request, 'disappointed_fan_app/main.html')
-
     context = {
         "curse": request.POST.get('main_curse'),
         "select1": request.POST.get('select1'),
@@ -70,6 +73,12 @@ def process_main(request):
             "Basketball": Team.objects.filter(sport_id = 4)
         }
     }
+    request.session['curse'] = request.POST.get('main_curse')
+    if not response['status']:
+        for tag, error in response['errors'].iteritems():
+            messages.error(request, error)
+        return render(request, 'disappointed_fan_app/main.html', context)
+
     print "Context", context['context']
     return render(request, 'disappointed_fan_app/main.html', context)
 
@@ -78,26 +87,26 @@ def main(request):
     return render(request, 'disappointed_fan_app/main.html')
 
 def data_json(request):
-    if request.method == 'POST':
-        tags_data = {
-            "tag": "#football",
-            "datetweet": [
-            "2018-02-01",
-            "2018-02-02",
-            "2018-02-03",
-            "2018-02-04",
-            "2018-02-05",
-            "2018-02-06",
-            "2018-02-07"],
-        "data": [90, 322, 152, 136, 532, 512, 169]
-        }
-        
-        tags_data = search_tweet(request.POST['curse'].strip())
-        response_data = {}
-        response_data['result'] = 'ok'
-        response_data['message'] = 'Successfully'
-        response_data['data'] = tags_data
-        return HttpResponse(json.dumps(tags_data), content_type="application/json")
+
+    tags_data = {
+        "tag": "#football",
+        "datetweet": [
+        "2018-02-01",
+        "2018-02-02",
+        "2018-02-03",
+        "2018-02-04",
+        "2018-02-05",
+        "2018-02-06",
+        "2018-02-07"],
+    "data": [90, 322, 152, 136, 532, 512, 169]
+    }
+    
+    tags_data = search_tweet(request.session['curse'])
+    response_data = {}
+    response_data['result'] = 'ok'
+    response_data['message'] = 'Successfully'
+    response_data['data'] = tags_data
+    return HttpResponse(json.dumps(tags_data), content_type="application/json")
     
     response_data = {}
     response_data['result'] = 'error'
@@ -143,7 +152,8 @@ def search_tweet(keyword):
                       access_token_secret='sSyRdjQtb4ZbKNvbNDYQ3QVuXJyGbgtrYKNtEJn5Arggf',
                       sleep_on_rate_limit=True)
 
-    results = api.GetSearch(raw_query="q={}".format(word))
+    results = api.GetSearch(raw_query="q={}&count=1000".format(keyword))
+    print len(results), "<<<<< tweets results"
     save_tweet_search(results)
     return generate_data(keyword, results)
 
@@ -157,22 +167,47 @@ def save_tweet_search(results):
             text = text)
 
 def generate_data(keyword, results):
-    data = {
+    datas = {
         "tag": keyword,
         "datetweet":[],
         "data": []
     }
+    print datas, "<==== datas"
+    print datas['tag'], "<==== datas"
     counter = 0
+    count_by_date = {}
     for i in range(0, len(results)):
-        dt = tweet.created_at
-        datekey = "{:04d}-{:02d}-{:02d}".format(dt.year, dt.month, dt.day)
+        # print results[i].created_at, "<==== Thu Mar 29 18:57:42 +0000 2018 <==== %u %b "
+        # ts = time.strftime('%Y-%m-%d', time.strptime(results[i].created_at,'%a %b %d %H:%M:%S +0000 %Y'))
+        # print ts, "<<<<<<<<<< ts"
+        datekey = time.strftime('%Y-%m-%d', time.strptime(results[i].created_at,'%a %b %d %H:%M:%S +0000 %Y'))
+        # datekey = "{:04d}-{:02d}-{:02d}".format(dt.year, dt.month, dt.day)
+        # counter += 1
+        # if not datekey in datas['datetweet']:
+        #     counter = 0
+        #     print counter
+        #     datas['datetweet'].append(datekey)
+        #     datas['data'].append(counter)
+        
         counter += 1
-        if datekey not in data.datetweet:
+        if not datekey in count_by_date:
             counter = 0
-        data.datetweet.append(datekey)
-        data.data.append(counter)
+        count_by_date[datekey] = counter
 
-    return data
+    for key, val in count_by_date.items():
+        datas['datetweet'].append(key)
+        datas['data'].append(val)
+
+    for i in range(6, -1, -1):
+        dt = datetime.datetime.now() - datetime.timedelta (days = i)
+        print dt
+        year_month = "{:04d}-{:02d}-{:02d}".format(dt.year, dt.month, dt.day)
+
+        if year_month not in datas['datetweet']:
+            datas['datetweet'].append(year_month)
+            datas['data'].append(0)
+
+    return datas
     
 
 def twitter_hello():
