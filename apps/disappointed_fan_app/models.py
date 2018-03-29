@@ -21,7 +21,11 @@ class UserSearchManager(models.Manager):
             'status': False,
             'errors': {}
         }
-        search_data = postData["curse"]
+        #changes for multi keyword conflict
+        if "index_curse" in postData:
+            search_data = postData["index_curse"]
+        else: 
+            search_data = postData["main_curse"]
         print 'search Keyword - ', search_data
         errors = {}
         print "in user_input_validator"

@@ -27,7 +27,13 @@ def process(request):
         return render(request, 'disappointed_fan_app/index_desktop.html')
     else:
         print "in process valid response"
-        return render(request, 'disappointed_fan_app/main.html')
+        context={
+            "curse": "#" + request.POST['index_curse'],
+            "select1": request.POST['select1'],
+            "select2": request.POST['select2'],
+            "page": "index"
+        }
+        return render(request, 'disappointed_fan_app/main.html', context)
 
 def process_main(request):
     response = UserSearch.objects.user_input_validator(request.POST)
@@ -39,7 +45,7 @@ def process_main(request):
         return render(request, 'disappointed_fan_app/main.html')
 
     context={
-        "curse": request.POST['curse'],
+        "curse": request.POST['main_curse'],
         "select1": request.POST['select1'],
         "select2": request.POST['select2'],
         "page": "main"
