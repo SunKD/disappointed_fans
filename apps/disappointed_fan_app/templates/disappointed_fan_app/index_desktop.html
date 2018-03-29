@@ -17,63 +17,85 @@
                 {% endif %}
             </div>
             <div class="row">
-                <div class="col-md-4 select-desc" id="desc_num1">#1 Choose a Sport</div>
-                <div class="col-md-4 select-desc" id="desc_num2">#2 Choose a Team</div>
-                <div class="col-md-4 select-desc" id="desc_num3">#3 Speak your mind!</div>
+
             </div>
             <div class="row selects">
                 <div class="col-md-4 col-6">
-                    <select class="selectpicker form-control" name="sport" id="firstchoice" onchange="picked()">
-                        <option value="invalid">Choose Sport</option>
-                        {% for key, val in context.items %}
-                            <option value="{{key}}">{{key}}</option>
-                        {% endfor %}
-                        <!-- <option value="NBA">NBA - Basketball</option>
-                        <option value="NHL">NHL - Hockey</option>
-                        <option value="MLS">MLS - Soccer</option> -->
-                    </select>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="select-desc" id="desc_num1">#1 Choose a Sport</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <select class="selectpicker form-control" name="sport" id="firstchoice" onchange="picked()">
+                                <option value="invalid">Choose Sport</option>
+                                {% for key, val in context.items %}
+                                    <option value="{{key}}">{{key}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4 col-6">
-                    <div class="" id="none">
-                        <select class="selectpicker form-control" name="team">
-                            <option disabled selected value>Choose a Sport First:</option>
-                        </select>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="select-desc" id="desc_num2">#2 Choose a Team</div>
+                        </div>
                     </div>
-                    <div class="" id="baseball">
-                        <select class="selectpicker form-control" name="team">
-                            <option disabled selected value>Select a Team:</option>
-                            {% for team in context.Baseball %}
-                                <option>{{team.name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="" id="soccer">
-                        <select class="selectpicker form-control" name="team">
-                            <option disabled selected value>Select a Team:</option>
-                            {% for team in context.Soccer %}
-                                <option>{{team.name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="" id="hockey">
-                        <select class="selectpicker form-control" name="team">
-                            <option disabled selected value>Select a Team:</option>
-                            {% for team in context.Hockey %}
-                                <option>{{team.name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="" id="basketball">
-                        <select class="selectpicker form-control" name="team">
-                            <option disabled selected value>Select a Team:</option>
-                            {% for team in context.basketball %}
-                                <option>{{team.name}}</option>
-                            {% endfor %}
-                        </select>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="" id="none">
+                                <select class="selectpicker form-control" name="team">
+                                    <option disabled selected value>Choose a Sport First:</option>
+                                </select>
+                            </div>
+                            <div class="" id="baseball">
+                                <select class="selectpicker form-control" name="team">
+                                    <option disabled selected value>Select a Team:</option>
+                                    {% for team in context.Baseball %}
+                                        <option>{{team.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="" id="soccer">
+                                <select class="selectpicker form-control" name="team">
+                                    <option disabled selected value>Select a Team:</option>
+                                    {% for team in context.Soccer %}
+                                        <option>{{team.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="" id="hockey">
+                                <select class="selectpicker form-control" name="team">
+                                    <option disabled selected value>Select a Team:</option>
+                                    {% for team in context.Hockey %}
+                                        <option>{{team.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="" id="basketball">
+                                <select class="selectpicker form-control" name="team">
+                                    <option disabled selected value>Select a Team:</option>
+                                    {% for team in context.basketball %}
+                                        <option>{{team.name}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-12">
-                    <input type="text" class="form-control" placeholder="Enter a keyword here" name="index_curse">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="select-desc" id="desc_num3">#3 Speak your mind!</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control" placeholder="Enter a keyword here" name="index_curse">
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">
