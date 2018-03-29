@@ -11,16 +11,47 @@
             <form action="process_main" method="POST">
                 {% csrf_token %}
                 <div class="row selects tac">
-                    <select class="selectpicker form-control col-6 col-md-12" name="sport">
-                        <option>Baseball</option>
-                        <option>Soccer</option>
-                        <option>Hockey</option>
-                    </select>
-                    <select class="selectpicker form-control col-6 col-md-12" name="team">
-                        {% for team in baseball %}
-                        <option>{{team.name}}</option>
-                        {% endfor %}
-                    </select>
+                    <div class="col-6 col-md-12">
+                        <select class="selectpicker form-control" name="sport" id="firstchoice" onchange="picked()">
+                            <option value="invalid">Choose Sport</option>
+                            <option value="invalid">Choose Sport</option>
+                            {% for key, val in context.items %}
+                            <option>{{key}}</option>
+                            {% endfor %}
+                            <!-- <option value="NBA">NBA - Basketball</option>
+                            <option value="NHL">NHL - Hockey</option>
+                            <option value="MLS">MLS - Soccer</option> -->
+                        </select>
+                    </div>
+                    <div class="col-6 col-md-12" id="none">
+                        <select class="selectpicker form-control" name="team">
+                            <option disabled selected value>Select a Team:</option>
+                        </select>
+                    </div>
+                    <div class="col-6 col-md-12" id="baseball">
+                        <select class="selectpicker form-control" name="team">
+                            {% for team in baseball %}
+                            <option>{{team.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-6 col-md-12" id="soccer">
+                        <select class="selectpicker form-control" name="team">
+                            {% for team in soccer %}
+                            <option>{{team.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-6 col-md-12" id="hockey">
+                        <select class="selectpicker form-control" name="team">
+                            {% for team in hockey %}
+                            <option>{{team.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control" placeholder="Enter a keyword here" name="curse">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-12">
@@ -30,13 +61,13 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="content col-md-8 col-12">
-            <h2 class="graph-title col-md-col-12 tac">{{curse}}</h2>
-            <div class="graph-wrapper m20">
-                <div id="viz"></div>
-            </div>
         </div>
     </div>
+    <div class="content col-md-8 col-12">
+        <h2 class="graph-title col-md-col-12 tac">{{curse}}</h2>
+        <div class="graph-wrapper m20">
+            <div id="viz"></div>
+        </div>
+    </div>
+</div>
 {% endblock %}

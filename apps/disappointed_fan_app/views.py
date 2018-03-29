@@ -18,9 +18,11 @@ def index(request):
     # twitter_hello()
     print Team.objects.all()
     context = {
-        "baseball" : Team.objects.filter(sport_id = 1),
-        "soccor": Team.objects.filter(sport_id = 2),
-        "hockey": Team.objects.filter(sport_id = 3)
+        "context": {
+            "baseball" : Team.objects.filter(sport_id = 1),
+            "soccor": Team.objects.filter(sport_id = 2),
+            "hockey": Team.objects.filter(sport_id = 3)
+        },
     }
     if request.user_agent.is_mobile:
         return render(request, 'disappointed_fan_app/index_mobile.html')
