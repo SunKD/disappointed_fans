@@ -5,7 +5,7 @@ d3.json(url, function(d) {
   var tagscounter = [],
       dates = [],
       margin = { top: 0, right: 0, bottom: 30, left: 20 },
-      height =  window.innerHeight * (5/10),
+      height =  window.innerHeight * (7/10),
       width = window.innerWidth * (5/10);
       // innerRadius = Math.min(width,height)/3,
       // outerRadius = innerRadius + 30;
@@ -130,7 +130,6 @@ d3.json(url, function(d) {
 
 
 $(document).ready(function(){
-<<<<<<< HEAD
   var howCheck = 1
   var whyCheck = 1
   $('#how').click(function(){
@@ -152,11 +151,4 @@ $(document).ready(function(){
       }
   })
 });
-||||||| merged common ancestors
   console.log('ready');
-});
-=======
-  console.log('ready');
-});
-
->>>>>>> main_graph

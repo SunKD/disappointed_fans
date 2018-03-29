@@ -12,31 +12,14 @@
                 {% csrf_token %}
                 <div class="row selects tac">
                     <select class="selectpicker form-control col-6 col-md-12" name="sport">
-                        <option>Select</option>
-                        <option>Football</option>
-                        <option>Hockey</option>
-                        <option>Soccer</option>
-                        <option>Volleyball</option>
-                        <option>Cricket</option>
-                        <option>Lacrosse</option>
-                        <option>Basketball</option>
                         <option>Baseball</option>
+                        <option>Soccer</option>
+                        <option>Hockey</option>
                     </select>
                     <select class="selectpicker form-control col-6 col-md-12" name="team">
-                        <optgroup label="NFL">
-                            <option>Arizona Cardinals</option>
-                            <option>Atlanta Falcons</option>
-                            <option>Baltimore Ravens</option>
-                            <option>Buffalo Bills</option>
-                        </optgroup>
-                        <optgroup label="MLB">
-                            <option>Baltimore Orioles</option>
-                            <option>Boston Red Sox</option>
-                            <option>Chicago White Sox</option>
-                            <option>Chicago Cubs</option>
-                            <option>Colorado Rockies</option>
-                            <option>Los Angeles Dodgers</option>
-                        </optgroup>
+                        {% for team in baseball %}
+                        <option>{{team.name}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="row">
@@ -54,8 +37,8 @@
             </div>
         </div>
         <div class="content col-md-8 col-12">
-            <h1 class="graph-title col-md-col-12 tac">{{curse}}</h1>
-            <div class="green-bg graph-wrapper m20">
+            <h2 class="graph-title col-md-col-12 tac">{{curse}}</h2>
+            <div class="graph-wrapper m20">
                 <div id="viz"></div>
             </div>
         </div>
