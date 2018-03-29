@@ -38,6 +38,13 @@ def process_main(request):
         print "in process valid response"
         return render(request, 'disappointed_fan_app/main.html')
 
+    context={
+        "curse": request.POST['curse'],
+        "select1": request.POST['select1'],
+        "select2": request.POST['select2'],
+        "page": "main"
+    }
+    return render(request, 'disappointed_fan_app/main.html', context)
 
 def main(request):
     return render(request, 'disappointed_fan_app/main.html')
