@@ -24,6 +24,10 @@ def process(request):
     response = UserSearch.objects.user_input_validator(request.POST)
     if not response['status']:
         print "in process error response"
+        context = {
+            'errorclass': 'red'
+        }
+        print "Error test - ", context
         return render(request, 'disappointed_fan_app/index_desktop.html')
     else:
         print "in process valid response"
@@ -38,7 +42,7 @@ def process(request):
 def process_main(request):
     response = UserSearch.objects.user_input_validator(request.POST)
     if not response['status']:
-        print "in process error response"
+        print "in process error response1"
         return render(request, 'disappointed_fan_app/main.html')
     else:
         print "in process valid response"
