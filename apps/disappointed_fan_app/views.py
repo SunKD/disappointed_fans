@@ -33,23 +33,29 @@ def main(request):
     return render(request, 'disappointed_fan_app/main.html')
 
 def data_json(request):
-    tags_data = {
-        "tag": "#football",
-        "datetweet": [
-        "2018-02-01",
-        "2018-02-02",
-        "2018-02-03",
-        "2018-02-04",
-        "2018-02-05",
-        "2018-02-06",
-        "2018-02-07"],
-    "data": [90, 322, 152, 136, 532, 512, 169]
-    }
+    if request.method == 'POST':
+        tags_data = {
+            "tag": "#football",
+            "datetweet": [
+            "2018-02-01",
+            "2018-02-02",
+            "2018-02-03",
+            "2018-02-04",
+            "2018-02-05",
+            "2018-02-06",
+            "2018-02-07"],
+        "data": [90, 322, 152, 136, 532, 512, 169]
+        }
+        tags_data = search_tweet(request.POST['curse'].strip())
+        response_data = {}
+        response_data['result'] = 'ok'
+        response_data['message'] = 'Successfully'
+        response_data['data'] = tags_data
+        return HttpResponse(json.dumps(tags_data), content_type="application/json")
+    
     response_data = {}
-    response_data['result'] = 'ok'
-    response_data['message'] = 'Successfully'
-    response_data['data'] = tags_data
-    return HttpResponse(json.dumps(tags_data), content_type="application/json")
+    response_data['result'] = 'error'
+    return HttpResponse(json.dumps(response_data), content_type="application/json")
 
 def twitter2():
     api = twitter.Api(consumer_key='YALCZmRQ6lZ7ATNiAoCHg9rWC',
@@ -61,7 +67,8 @@ def twitter2():
     # print api.VerifyCredentials()
     keywords_done = ['MLS', 'NBA', 'NHL']
     keywords_done = ['Badminton', 'Biribol', 'Bossaball', 'Hiking', 'Seven-ball']
-    keywords = []
+    keywords_done = ['soccer fan']
+    keywords = ['dota']
 
     for word in keywords:
         # results = api.GetSearch(raw_query="q=seahawk")
@@ -83,7 +90,27 @@ def twitter2():
                 created_at_tw = created_at_tw, 
                 text = text)
 
-def generate_data(keyword, result):
+def search_tweet(keyword):
+    api = twitter.Api(consumer_key='YALCZmRQ6lZ7ATNiAoCHg9rWC',
+                      consumer_secret='9xgJgZP2AQ9lOJuivUaRu2WLCMnxUnB4rbBZxDZbiNaqqy2W10',
+                      access_token_key='978374762350067712-ak7ZarAZgf2pDoMLuLEt9LxdOpTmk7W',
+                      access_token_secret='sSyRdjQtb4ZbKNvbNDYQ3QVuXJyGbgtrYKNtEJn5Arggf',
+                      sleep_on_rate_limit=True)
+
+    results = api.GetSearch(raw_query="q={}".format(word))
+    save_tweet_search(results)
+    return generate_data(keyword, results)
+
+def save_tweet_search(results):
+    for i in range(0, len(results)):
+        hashtags = results[i].hashtags
+        created_at_tw = results[i].created_at
+        text = results[i].text
+        Tw_Data.objects.create(hashtags = hashtags, 
+            created_at_tw = created_at_tw, 
+            text = text)
+
+def generate_data(keyword, results):
     data = {
         "tag": keyword,
         "datetweet":[],
