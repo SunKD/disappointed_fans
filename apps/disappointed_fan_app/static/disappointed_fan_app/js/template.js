@@ -1,20 +1,29 @@
 function picked() {
     var choice = document.getElementById("firstchoice").value;
-    if (choice == "NBA - Basketball") {
+    if (choice == "Baseball") {
         $("#none").hide();
         $("#baseball").show();
         $("#soccer").hide();
         $("#hockey").hide();
-    } else if (choice == "MLS - Soccer") {
+        $("#basketball").hide();
+    } else if (choice == "Soccer") {
         $("#none").hide();
         $("#baseball").hide();
         $("#soccer").show();
         $("#hockey").hide();
-    }else if(choice == "NHL - Hockey"){
+        $("#basketball").hide();
+    }else if(choice == "Hockey"){
         $("#none").hide();
         $("#baseball").hide();
         $("#soccer").hide();
         $("#hockey").show();
+        $("#basketball").hide();
+    }else if(choice == "Basketball"){
+        $("#none").hide();
+        $("#baseball").hide();
+        $("#soccer").hide();
+        $("#hockey").hide();
+        $("#basketball").show();
     }
 }
 

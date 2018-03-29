@@ -130,37 +130,53 @@ d3.json(url, function(d) {
 
 
 $(document).ready(function(){
+  // toggle functions for the Mobile Landing Page
   var howCheck = 1
   var whyCheck = 1
-  $('#how').click(function(){
-      if (howCheck) {
-          $('#how-data').slideToggle();
-          howCheck = 0;
-      }else{
-          $('#how-data').slideToggle();
-          howCheck = 1;
-      }
-  })
-  $('#why').click(function(){
-      if (whyCheck) {
-          $('#why-data').slideToggle();
-          whyCheck = 0;
-      }else{
-          $('#why-data').slideToggle();
-          whyCheck = 1;
-      }
-  })
+    $('#how').click(function(){
+        if (howCheck) {
+            $('#how-data').slideToggle();
+            howCheck = 0;
+        }else{
+            $('#how-data').slideToggle();
+            howCheck = 1;
+        }
+    })
+    $('#why').click(function(){
+        if (whyCheck) {
+            $('#why-data').slideToggle();
+            whyCheck = 0;
+        }else{
+            $('#why-data').slideToggle();
+            whyCheck = 1;
+        }
+    })
+    function picked() {
+        var choice = document.getElementById("firstchoice").value;
+        if (choice == "Baseball") {
+            $("#none").hide();
+            $("#baseball").show();
+            $("#soccer").hide();
+            $("#hockey").hide();
+            $("#basketball").hide();
+        } else if (choice == "Soccer") {
+            $("#none").hide();
+            $("#baseball").hide();
+            $("#soccer").show();
+            $("#hockey").hide();
+            $("#basketball").hide();
+        }else if(choice == "Hockey"){
+            $("#none").hide();
+            $("#baseball").hide();
+            $("#soccer").hide();
+            $("#hockey").show();
+            $("#basketball").hide();
+        }else if(choice == "Basketball"){
+            $("#none").hide();
+            $("#baseball").hide();
+            $("#soccer").hide();
+            $("#hockey").hide();
+            $("#basketball").show();
+        }
+    }
 });
-<<<<<<< HEAD
-||||||| merged common ancestors
-||||||| merged common ancestors
-  console.log('ready');
-});
-=======
-  console.log('ready');
-});
-
->>>>>>> main_graph
-=======
-  console.log('ready');
->>>>>>> sportdb

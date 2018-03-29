@@ -8,65 +8,91 @@
 <div class="container">
     <div class="row">
         <div class="sidebar col-md-4 col-12">
+                <div class="row">
+                    <div class="error-box col-12">
+                        {% if messages %}
+                        <div class="tac">
+                            <ul>
+                            {% for message in messages %}
+                                <li class="red">{{message}}</li>
+                            {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
             <form action="process_main" method="POST">
                 {% csrf_token %}
                 <div class="row selects tac">
                     <div class="col-6 col-md-12">
                         <select class="selectpicker form-control" name="sport" id="firstchoice" onchange="picked()">
                             <option value="invalid">Choose Sport</option>
-                            <option value="invalid">Choose Sport</option>
                             {% for key, val in context.items %}
-                            <option>{{key}}</option>
-                            {% endfor %}
-                            <!-- <option value="NBA">NBA - Basketball</option>
-                            <option value="NHL">NHL - Hockey</option>
-                            <option value="MLS">MLS - Soccer</option> -->
-                        </select>
-                    </div>
-                    <div class="col-6 col-md-12" id="none">
-                        <select class="selectpicker form-control" name="team">
-                            <option disabled selected value>Select a Team:</option>
-                        </select>
-                    </div>
-                    <div class="col-6 col-md-12" id="baseball">
-                        <select class="selectpicker form-control" name="team">
-                            {% for team in baseball %}
-                            <option>{{team.name}}</option>
+                                <option value="{{key}}">{{key}}</option>
                             {% endfor %}
                         </select>
                     </div>
-                    <div class="col-6 col-md-12" id="soccer">
-                        <select class="selectpicker form-control" name="team">
-                            {% for team in soccer %}
-                            <option>{{team.name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="col-6 col-md-12" id="hockey">
-                        <select class="selectpicker form-control" name="team">
-                            {% for team in hockey %}
-                            <option>{{team.name}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
-                    <div class="col-12">
-                        <input type="text" class="form-control" placeholder="Enter a keyword here" name="curse">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="twitterfeed large">
-                            <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/TwitterSports?ref_src=twsrc%5Etfw">Tweets by TwitterSports</a>
-                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    <div class="col-6 col-md-12">
+                        <div class="" id="none">
+                            <select class="selectpicker form-control" name="team">
+                                <option disabled selected value>Choose a Sport First:</option>
+                            </select>
+                        </div>
+                        <div class="" id="baseball">
+                            <select class="selectpicker form-control" name="team">
+                                <option disabled selected value>Select a Team:</option>
+                                {% for team in context.Baseball %}
+                                    <option>{{team.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="" id="soccer">
+                            <select class="selectpicker form-control" name="team">
+                                <option disabled selected value>Select a Team:</option>
+                                {% for team in context.Soccer %}
+                                    <option>{{team.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="" id="hockey">
+                            <select class="selectpicker form-control" name="team">
+                                <option disabled selected value>Select a Team:</option>
+                                {% for team in context.Hockey %}
+                                    <option>{{team.name}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="" id="basketball">
+                            <select class="selectpicker form-control" name="team">
+                                <option disabled selected value>Select a Team:</option>
+                                {% for team in context.basketball %}
+                                    <option>{{team.name}}</option>
+                                {% endfor %}
+                            </select>
                         </div>
                     </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control" placeholder="Enter a keyword here" name="main_curse">
+                    </div>
+                    <div class="col-12">
+                        <input type="submit" class="btn blue-btn form-control" value="Go!">
+                    </div>
                 </div>
+            </form>
+            <div class="row">
+                <div class="col-12">
+                    <div class="twitterfeed large">
+                        <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/TwitterSports?ref_src=twsrc%5Etfw">Tweets by TwitterSports</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="content col-md-8 col-12">
-        <h2 class="graph-title col-md-col-12 tac">{{curse}}</h2>
-        <div class="graph-wrapper m20">
-            <div id="viz"></div>
+        <div class="content col-md-8 col-12">
+            <h2 class="graph-title col-md-col-12 tac">{{curse}}</h2>
+            <div class="graph-wrapper m20">
+                <div id="viz"></div>
+            </div>
         </div>
     </div>
 </div>

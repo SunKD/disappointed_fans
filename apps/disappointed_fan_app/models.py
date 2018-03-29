@@ -25,18 +25,21 @@ class UserSearchManager(models.Manager):
         if "index_curse" in postData:
             search_data = postData["index_curse"]
         else:
-            search_data = postData["main_curse"]
+            search_data = postData.get("main_curse")
+        sport = postData.get('sport')
         print 'search Keyword - ', search_data
         errors = {}
-        if len(search_data) < 1:
+        if search_data == None:
             errors['need_data'] = "Please enter a valid keyword - must be at least 1 character long."
         elif not SEARCH_DATA_RE.match(search_data):
             errors['bad_characters'] = "Please enter a valid keyword - no special characters and leave off the #."
-        if len(search_data) > 100:
-            errors['many_data'] = "Please enter a valid keyword - something less than 100 characters"
-        # print "Sport -", sport
-        # if sport == "invalid":
-        #     errors['select_sport'] = "Please choose a sport."
+        banned_words = ['fun', 'rainbow', 'happy', 'excited', 'satisfied', 'puppies', 'kittens', ]
+        for word in banned_words:
+            if word == search_data:
+                errors['banned_word'] = "Seriously? That's not why we're here. Try a less friendly keyword."
+        print "Sport -", sport
+        if sport == "invalid":
+            errors['select_sport'] = "Please choose a sport."
         # if team == NULL:
         #     errors['select_team'] = "Please choose a team."
 

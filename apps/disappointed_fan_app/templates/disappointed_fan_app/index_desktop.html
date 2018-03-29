@@ -5,58 +5,80 @@
             {% csrf_token %}
             <h1 class="tac">ESDN</h1>
             <h2 class="tac">Entertainment Sports Disappointment Network</h2>
+            <div class="error-box">
+                {% if messages %}
+                <div class="tac">
+                    <ul>
+                        {% for message in messages %}
+                        <li>{{message}}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
             <div class="row">
-                <div class="col-md-4 select-desc {{errorclass}}" id="desc_num1">#1 Choose a Sport</div>
-                <div class="col-md-4 select-desc {{errorclass}}" id="desc_num2">#2 Choose a Team</div>
-                <div class="col-md-4 select-desc {{errorclass}}" id="desc_num3">#3 Speak your mind!</div>
+                <div class="col-md-4 select-desc" id="desc_num1">#1 Choose a Sport</div>
+                <div class="col-md-4 select-desc" id="desc_num2">#2 Choose a Team</div>
+                <div class="col-md-4 select-desc" id="desc_num3">#3 Speak your mind!</div>
             </div>
             <div class="row selects">
                 <div class="col-md-4 col-6">
                     <select class="selectpicker form-control" name="sport" id="firstchoice" onchange="picked()">
                         <option value="invalid">Choose Sport</option>
                         {% for key, val in context.items %}
-                        <option>{{key}}</option>
+                            <option value="{{key}}">{{key}}</option>
                         {% endfor %}
                         <!-- <option value="NBA">NBA - Basketball</option>
                         <option value="NHL">NHL - Hockey</option>
                         <option value="MLS">MLS - Soccer</option> -->
                     </select>
                 </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-3 col-6" id="none">
-                    <select class="selectpicker form-control" name="team">
-                        <option disabled selected value>Select a Team:</option>
-                    </select>
+                <div class="col-md-4 col-6">
+                    <div class="" id="none">
+                        <select class="selectpicker form-control" name="team">
+                            <option disabled selected value>Choose a Sport First:</option>
+                        </select>
+                    </div>
+                    <div class="" id="baseball">
+                        <select class="selectpicker form-control" name="team">
+                            <option disabled selected value>Select a Team:</option>
+                            {% for team in context.Baseball %}
+                                <option>{{team.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="" id="soccer">
+                        <select class="selectpicker form-control" name="team">
+                            <option disabled selected value>Select a Team:</option>
+                            {% for team in context.Soccer %}
+                                <option>{{team.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="" id="hockey">
+                        <select class="selectpicker form-control" name="team">
+                            <option disabled selected value>Select a Team:</option>
+                            {% for team in context.Hockey %}
+                                <option>{{team.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="" id="basketball">
+                        <select class="selectpicker form-control" name="team">
+                            <option disabled selected value>Select a Team:</option>
+                            {% for team in context.basketball %}
+                                <option>{{team.name}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
                 </div>
-                <div class="col-md-3 col-6" id="baseball">
-                    <select class="selectpicker form-control" name="team">
-                        {% for team in context.baseball %}
-                        <option>{{team.name}}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-md-3 col-6" id="soccer">
-                    <select class="selectpicker form-control" name="team">
-                        {% for team in context.soccer %}
-                        <option>{{team.name}}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-md-3 col-6" id="hockey">
-                    <select class="selectpicker form-control" name="team">
-                        {% for team in context.hockey %}
-                        <option>{{team.name}}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-                <div class="col-md-1"></div>
-                <div class="col-md-3 col-12">
-                    <input type="text" class="form-control" placeholder="Enter a keyword here" name="curse">
+                <div class="col-md-4 col-12">
+                    <input type="text" class="form-control" placeholder="Enter a keyword here" name="index_curse">
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
-                    <input type="submit" class="btn form-control ml20 mr20 " value="Find out How many people has the same thought!">
+                    <input type="submit" class="btn form-control ml20 mr20 " value="See how many people had the same thought!">
                 </div>
             </div>
         </form>

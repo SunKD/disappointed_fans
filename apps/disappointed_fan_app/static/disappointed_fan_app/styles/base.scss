@@ -142,6 +142,10 @@
         .row{
             margin-top: 10px;
         }
+        .twitterfeed{
+            margin: 0 auto;
+            padding: 0 0 0 25px;
+        }
 
     }
 
@@ -162,10 +166,20 @@
         }
         h2{
             margin-top: 20px;
-            margin-bottom: 150px;
+            margin-bottom: 110px;
             font-size: 2em;
         }
-
+        .error-box{
+            max-height: 80px;
+            width: 60%;
+            margin: 0 auto;
+            font-size: 1em;
+            color: #c00;
+            text-shadow: none;
+            background-color: white;
+            border-radius: 5px;
+            // border: 1px solid gray
+        }
         .row{
             margin-top: 10px;
         }
@@ -181,10 +195,23 @@
             background-color: #243B55;
             color: white;
         }
+    }
+    .blue-btn{
+        background-color: #243B55;
+        color: white;
+    }
 
-        #baseball, #soccer, #hockey{
-            display: none;
-        }
+    #baseball{
+        display: none;
+    }
+    #soccer{
+        display: none;
+    }
+    #hockey{
+        display: none;
+    }
+    #basketball{
+        display: none;
     }
 
 }
