@@ -145,11 +145,6 @@
 
     }
 
-    .graph-title{
-
-    }
-
-
     .user-input {
         z-index: 2;
         position: relative;
@@ -187,6 +182,9 @@
             color: white;
         }
 
+        #baseball, #soccer, #hockey{
+            display: none;
+        }
     }
 
 }
