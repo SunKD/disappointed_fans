@@ -65,6 +65,9 @@ table {
 .purple-bg {
   background-color: purple; }
 
+.red {
+  color: #c00; }
+
 .dilb {
   display: inline-block; }
 
@@ -114,8 +117,11 @@ img {
 .mt20 {
   margin-top: 20px; }
 
-.ml20 {
-  margin-left: 20px; }
+.mb20 {
+  margin-bottom: 20px; }
+
+.mb10 {
+  margin-bottom: 10px; }
 
 .ml15 {
   margin-left: 15px; }
@@ -304,7 +310,7 @@ img {
         .container .mobile-instruct .how-answer p span {
           color: #C00; }
     .container .mobile-instruct button {
-      background-color: #F4F7D9;
+      background-color: white;
       border-radius: 3px;
       color: #495057;
       width: 100%;
@@ -318,9 +324,6 @@ img {
       padding-right: 21px; }
   .container .sidebar .row {
     margin-top: 10px; }
-  .container .sidebar .selects {
-    margin-left: 0;
-    margin-right: 0; }
   .container .content .graph-wrapper {
     width: 100%;
     height: 800px;
@@ -346,6 +349,8 @@ img {
       font-size: 2em; }
     .container .user-input .row {
       margin-top: 10px; }
+    .container .user-input .select-desc {
+      text-shadow: 2px 2px 2px #292828; }
     .container .user-input .selects {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
     .container .user-input .btn {

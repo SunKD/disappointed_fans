@@ -11,7 +11,7 @@ d3.json(url, function(d) {
       // outerRadius = innerRadius + 30;
       // height = 200 - margin.top - margin.bottom,
       // width = 300 - margin.left - margin.right;
-      
+
 
   var   tempColor,
         yScale,
@@ -130,7 +130,6 @@ d3.json(url, function(d) {
 
 
 $(document).ready(function(){
-<<<<<<< HEAD
   var howCheck = 1
   var whyCheck = 1
   $('#how').click(function(){
@@ -152,11 +151,3 @@ $(document).ready(function(){
       }
   })
 });
-||||||| merged common ancestors
-  console.log('ready');
-});
-=======
-  console.log('ready');
-});
-
->>>>>>> main_graph

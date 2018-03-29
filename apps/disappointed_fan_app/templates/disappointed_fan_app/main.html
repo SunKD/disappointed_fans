@@ -12,33 +12,37 @@
                 <form action="process_main" method="POST">
                     {% csrf_token %}
                     <div class="row selects tac">
-                        <select class="selectpicker form-control col-6 col-md-12" name="sport">
-                            <option>Select</option>
-                            <option>Football</option>
-                            <option>Hockey</option>
-                            <option>Soccer</option>
-                            <option>Volleyball</option>
-                            <option>Cricket</option>
-                            <option>Lacrosse</option>
-                            <option>Basketball</option>
-                            <option>Baseball</option>
-                        </select>
-                        <select class="selectpicker form-control col-6 col-md-12" name="team">
-                            <optgroup label="NFL">
-                                <option>Arizona Cardinals</option>
-                                <option>Atlanta Falcons</option>
-                                <option>Baltimore Ravens</option>
-                                <option>Buffalo Bills</option>
-                            </optgroup>
-                            <optgroup label="MLB">
-                                <option>Baltimore Orioles</option>
-                                <option>Boston Red Sox</option>
-                                <option>Chicago White Sox</option>
-                                <option>Chicago Cubs</option>
-                                <option>Colorado Rockies</option>
-                                <option>Los Angeles Dodgers</option>
-                            </optgroup>
-                        </select>
+                        <div class="col-6 col-md-12 mb10">
+                            <select class="selectpicker form-control" name="sport">
+                                <option>Select</option>
+                                <option>Football</option>
+                                <option>Hockey</option>
+                                <option>Soccer</option>
+                                <option>Volleyball</option>
+                                <option>Cricket</option>
+                                <option>Lacrosse</option>
+                                <option>Basketball</option>
+                                <option>Baseball</option>
+                            </select>
+                        </div>
+                        <div class="col-6 col-md-12">
+                            <select class="selectpicker form-control" name="team">
+                                <optgroup label="NFL">
+                                    <option>Arizona Cardinals</option>
+                                    <option>Atlanta Falcons</option>
+                                    <option>Baltimore Ravens</option>
+                                    <option>Buffalo Bills</option>
+                                </optgroup>
+                                <optgroup label="MLB">
+                                    <option>Baltimore Orioles</option>
+                                    <option>Boston Red Sox</option>
+                                    <option>Chicago White Sox</option>
+                                    <option>Chicago Cubs</option>
+                                    <option>Colorado Rockies</option>
+                                    <option>Los Angeles Dodgers</option>
+                                </optgroup>
+                            </select>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-12">
@@ -46,12 +50,18 @@
                         </div>
                     </div>
                     <div class="row">
-                        <input type="submit" class="btn btn-secondary form-control ml20 mr20 " value="Go!">
+                        <div class="col-12">
+                            <input type="submit" class="btn btn-secondary form-control " value="Go!">
+                        </div>
                     </div>
                 </form>
-                <div class="twitterfeed large">
-                    <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/TwitterSports?ref_src=twsrc%5Etfw">Tweets by TwitterSports</a>
-                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="twitterfeed large">
+                            <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/TwitterSports?ref_src=twsrc%5Etfw">Tweets by TwitterSports</a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="content col-md-8 col-12">
@@ -61,6 +71,6 @@
                 </div>
             </div>
         </div>
-    
+
     </div>
     {% endblock %}
