@@ -171,7 +171,11 @@
             margin-top: 10px;
         }
         .select-desc{
-            text-shadow: 2px 2px 2px #292828;
+            // text-shadow: 2px 2px 2px #292828; text-shadow:
+   -1px -1px 0 #000,  
+   1px -1px 0 #000,
+   -1px 1px 0 #000,
+    1px 1px 0 #000;
         }
         .selects{
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
