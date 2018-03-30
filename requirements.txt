@@ -61,11 +61,8 @@ user-agents==1.1.0
 virtualenv==15.1.0
 virtualenv-clone==0.3.0
 wcwidth==0.1.7
-<<<<<<< HEAD
 wrapt==1.10.11
-=======
 Werkzeug==0.14.1
 win-inet-pton==1.0.1
 win-unicode-console==0.5
 zope.interface==4.4.3
->>>>>>> aec51ba5630268efd89a67f1bc3c7742cdb3ea5f
