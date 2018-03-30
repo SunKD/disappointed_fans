@@ -18,7 +18,6 @@ from models import UserSearch, Team, Sport
 # Create your views here
 
 def index(request):
-    # twitter_hello()
     print "In Index Route"
     print Team.objects.all()
     context = {
@@ -38,9 +37,9 @@ def process(request):
     print "In Process Route"
     response = UserSearch.objects.user_input_validator(request.POST)
     context={
-        "curse": "#" + request.POST['index_curse'],
-        "select1": request.POST.get('select1'),
-        "select2": request.POST.get('select2'),
+        "curse": request.POST.get('index_curse'),
+        "select1": request.POST.get('sport'),
+        "select2": request.POST.get('team'),
         "page": "index",
         "context": {
             "Baseball" : Team.objects.filter(sport_id = 1),
@@ -49,11 +48,14 @@ def process(request):
             "Basketball": Team.objects.filter(sport_id = 4)
         }
     }
-    request.session['curse'] = request.POST.get('index_curse')
+    
     if not response['status']:
         for tag, error in response['errors'].iteritems():
             messages.error(request, error)
-        return render(request, 'disappointed_fan_app/index_desktop.html', context)
+            if request.user_agent.is_mobile:
+                return render(request, 'disappointed_fan_app/index_mobile.html', context)
+            else:
+                return render(request, 'disappointed_fan_app/index_desktop.html', context)
     else:
         print "in process valid response"
         return render(request, 'disappointed_fan_app/main.html', context)
@@ -62,9 +64,9 @@ def process_main(request):
     print "In Process_Main Route"
     response = UserSearch.objects.user_input_validator(request.POST)
     context = {
-        "curse": "#" + request.POST.get('main_curse'),
-        "select1": request.POST.get('select1'),
-        "select2": request.POST.get('select2'),
+        "curse": request.POST.get('main_curse'),
+        "select1": request.POST.get('sport'),
+        "select2": request.POST.get('team'),
         "page": "main",
         "context": {
             "Baseball" : Team.objects.filter(sport_id = 1),
@@ -73,6 +75,7 @@ def process_main(request):
             "Basketball": Team.objects.filter(sport_id = 4)
         }
     }
+
     request.session['curse'] = request.POST.get('main_curse')
     if not response['status']:
         for tag, error in response['errors'].iteritems():
@@ -83,8 +86,16 @@ def process_main(request):
     return render(request, 'disappointed_fan_app/main.html', context)
 
 def main(request):
+    context = {
+        "context": {
+            "Baseball" : Team.objects.filter(sport_id = 1),
+            "Soccer": Team.objects.filter(sport_id = 2),
+            "Hockey": Team.objects.filter(sport_id = 3),
+            "Basketball": Team.objects.filter(sport_id = 4)
+        }
+    }
     print "In Main route"
-    return render(request, 'disappointed_fan_app/main.html')
+    return render(request, 'disappointed_fan_app/main.html', context)
 
 def data_json(request):
 

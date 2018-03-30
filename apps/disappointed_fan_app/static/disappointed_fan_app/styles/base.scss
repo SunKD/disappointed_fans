@@ -5,12 +5,6 @@
 @import "helpers/buttons";
 @import "helpers/mixins";
 
-// import responsive sheets
-@import "responsive/1phone";
-@import "responsive/2tablet";
-@import "responsive/3desktop";
-
-
 .mobile-outer-bg{
     background: #141E30;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to bottom, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
@@ -22,24 +16,35 @@
 
 
 .logo {
-    // font-family: 'Playball', cursive;
     font-family: 'Holtwood One SC', serif;
     font-size: 1.5em;
     color: white;
+}
+
+.navbar {
+    background-color: #243B55;
+    margin-bottom: 20px;
+    a:link {
+        text-decoration: none;
+        color: white;
+    }
+    
+    a:visited {
+        text-decoration: none;
+        color: white;
+    }
 }
 
 .container{
     position: relative;
     top: 0;
     .mobile-instruct{
-        // font-family: 'Unica One', cursive;
         font-family: serif, cursive;
         .fa-thumbs-down{
             font-size: 3.5em;
             margin-top: 65px;
         }
         h1{
-            // font-family: 'Playball', cursive;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
             font-size: 3em;
             margin-bottom: 50px;
@@ -48,7 +53,6 @@
             margin: 50px 0 0px 0;
         }
         h2:first-of-type{
-            // font-family: 'Playball', cursive;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
             font-size: 2.3em;
             margin-bottom: 48px;
@@ -171,11 +175,7 @@
             margin-top: 10px;
         }
         .select-desc{
-            // text-shadow: 2px 2px 2px #292828; text-shadow:
-   -1px -1px 0 #000,  
-   1px -1px 0 #000,
-   -1px 1px 0 #000,
-    1px 1px 0 #000;
+            text-shadow: 2px 2px #292828; 
         }
         .selects{
             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -214,5 +214,14 @@
         display: none;
     }
 
+    .graph-title{
+        font-size: 1.2em;
+        color: #243B55;
+        margin-top: 10px;
+    }
 }
 
+// import responsive sheets
+@import "responsive/1phone";
+@import "responsive/2tablet";
+@import "responsive/3desktop";

@@ -214,18 +214,6 @@ img {
 .no-cssanimations .slideshow li {
   opacity: 1; }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .large, .medium {
-    display: none; }
-
-  .container {
-    color: white; } }
-@media only screen and (min-device-width: 481px) and (max-device-width: 1023px) {
-  .small, .large {
-    display: none; } }
-@media only screen and (min-device-width: 1024px) {
-  .small, .tablet {
-    display: none; } }
 .mobile-outer-bg {
   background: #141E30;
   /* fallback for old browsers */
@@ -241,6 +229,16 @@ img {
   font-family: 'Holtwood One SC', serif;
   font-size: 1.5em;
   color: white; }
+
+.navbar {
+  background-color: #243B55;
+  margin-bottom: 20px; }
+  .navbar a:link {
+    text-decoration: none;
+    color: white; }
+  .navbar a:visited {
+    text-decoration: none;
+    color: white; }
 
 .container {
   position: relative;
@@ -322,11 +320,6 @@ img {
       margin-left: 7px; }
     .container .mobile-instruct .btn-r {
       padding-right: 21px; }
-  .container .sidebar .row {
-    margin-top: 10px; }
-  .container .sidebar .twitterfeed {
-    margin: 0 auto;
-    padding: 0 0 0 25px; }
   .container .user-input {
     z-index: 2;
     position: relative;
@@ -355,7 +348,7 @@ img {
     .container .user-input .row {
       margin-top: 10px; }
     .container .user-input .select-desc {
-      text-shadow: 2px 2px 2px #292828; }
+      text-shadow: 2px 2px #292828; }
     .container .user-input .selects {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
     .container .user-input .btn {
@@ -379,5 +372,28 @@ img {
     display: none; }
   .container #basketball {
     display: none; }
+  .container .graph-title {
+    font-size: 1.2em;
+    color: #243B55;
+    margin-top: 10px; }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .large, .medium {
+    display: none; }
+
+  .container {
+    color: white; } }
+@media only screen and (min-device-width: 481px) and (max-device-width: 1023px) {
+  .small, .large {
+    display: none; }
+
+  .container .graph-title {
+    font-size: 1.6em; } }
+@media only screen and (min-device-width: 1024px) {
+  .small, .tablet {
+    display: none; }
+
+  .container .graph-title {
+    font-size: 2em; } }
 
 /*# sourceMappingURL=base.css.map */
