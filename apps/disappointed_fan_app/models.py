@@ -32,7 +32,7 @@ class UserSearchManager(models.Manager):
             errors['need_data'] = "Please enter a valid keyword - must be at least 1 character long."
         elif not SEARCH_DATA_RE.match(search_data):
             errors['bad_characters'] = "Please enter a valid keyword - no special characters and leave off the #."
-        banned_words = ['fun', 'rainbow', 'happy', 'excited', 'satisfied', 'puppies', 'kittens', ]
+        banned_words = ['fun', 'rainbow', 'happy', 'excited', 'satisfied', 'puppies', 'kittens', 'joy', 'winners', 'winning', 'win', 'rainbows']
         for word in banned_words:
             if word == search_data:
                 errors['banned_word'] = "Seriously? That's not why we're here. Try a less friendly keyword."
