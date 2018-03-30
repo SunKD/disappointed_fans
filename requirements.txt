@@ -50,7 +50,6 @@ singledispatch==3.4.0.3
 six==1.11.0
 swampy==2.1.7
 traitlets==4.3.2
-turtle==0.0.2
 tweepy==3.6.0
 tweetpy==0.1
 Twisted==17.9.0
