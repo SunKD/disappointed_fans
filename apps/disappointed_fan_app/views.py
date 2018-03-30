@@ -44,9 +44,9 @@ def index(request):
 def process(request):
     response = UserSearch.objects.user_input_validator(request.POST)
     context={
-        "curse": "#" + request.POST['index_curse'],
-        "select1": request.POST.get('select1'),
-        "select2": request.POST.get('select2'),
+        "curse": "#" + request.POST.get('index_curse'),
+        "select1": "#" + request.POST.get('sport'),
+        "select2": "#" + request.POST.get('team'),
         "page": "index",
         "context": {
             "Baseball" : Team.objects.filter(sport_id = 1),
@@ -67,8 +67,8 @@ def process_main(request):
     response = UserSearch.objects.user_input_validator(request.POST)
     context = {
         "curse": "#" + request.POST.get('main_curse'),
-        "select1": request.POST.get('select1'),
-        "select2": request.POST.get('select2'),
+        "select1": "#" + request.POST.get('sport'),
+        "select2": "#" + request.POST.get('team'),
         "page": "main",
         "context": {
             "Baseball" : Team.objects.filter(sport_id = 1),
