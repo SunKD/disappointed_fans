@@ -1,399 +1,61 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+/*
+Error: Invalid CSS after "    1px 1px 0 #000": expected "{", was ";"
+        on line 178 of ./disappointed_fan_app/static/disappointed_fan_app/styles/base.scss
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+173:         .select-desc{
+174:             // text-shadow: 2px 2px 2px #292828; text-shadow:
+175:    -1px -1px 0 #000,  
+176:    1px -1px 0 #000,
+177:    -1px 1px 0 #000,
+178:     1px 1px 0 #000;
+179:         }
+180:         .selects{
+181:             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+182:         }
+183: 
 
-body {
-  line-height: 1; }
-
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-.green-bg {
-  background-color: green; }
-
-.gray-bg {
-  background-color: #F4F7D9; }
-
-.blue-bg {
-  background-color: #04518C; }
-
-.red-bg {
-  background-color: red; }
-
-.yellow-bg {
-  background-color: yellow; }
-
-.orange-bg {
-  background-color: orange; }
-
-.black-bg {
-  background-color: black; }
-
-.purple-bg {
-  background-color: purple; }
-
-.red {
-  color: #c00; }
-
-.dilb {
-  display: inline-block; }
-
-.hidden {
-  display: none; }
-
-.invisible {
-  visibility: hidden; }
-
-.tac {
-  text-align: center; }
-
-.tal {
-  text-align: left; }
-
-.tar {
-  text-align: right; }
-
-.divider {
-  border-bottom: 3px solid #3E423A;
-  -webkit-box-shadow: 1px 7px 3px -4px #6c6e58;
-  -moz-box-shadow: 1px 7px 3px -4px #6c6e58;
-  box-shadow: 1px 7px 3px -4px #6c6e58; }
-
-.divider-small {
-  -webkit-box-shadow: 0px 2px 4px 1px #6c6e58;
-  -moz-box-shadow: 0px 2px 4px 1px #6c6e58;
-  box-shadow: 0px 2px 4px 1px #6c6e58;
-  border-bottom: 3px solid #3E423A;
-  width: 80%;
-  margin: 0 auto;
-  height: 1px; }
-
-.float-right {
-  float: right; }
-
-.float-left {
-  float: left; }
-
-.clearfix {
-  clear: both; }
-
-img {
-  width: 100%;
-  height: 100%; }
-
-.mt20 {
-  margin-top: 20px; }
-
-.mb20 {
-  margin-bottom: 20px; }
-
-.mb10 {
-  margin-bottom: 10px; }
-
-.ml15 {
-  margin-left: 15px; }
-
-.ml10 {
-  margin-left: 10px; }
-
-.mr20 {
-  margin-right: 20px; }
-
-.mr10 {
-  margin-right: 10px; }
-
-.m20 {
-  margin: 20px; }
-
-@media screen and (max-width: 500px) {
-  .slideshow {
-    list-style: none; } }
-@media screen and (min-width: 501px) {
-  body {
-    background-color: #EEE; }
-
-  .slideshow {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 0;
-    list-style: none;
-    margin: 0;
-    padding: 0; }
-
-  .slideshow li {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    opacity: 0;
-    z-index: 0;
-    animation: imageAnimation 50s linear infinite; }
-
-  .slideshow li:nth-child(1) {
-    background-image: url("/static/img/img1.jpg"); }
-
-  .slideshow li:nth-child(2) {
-    background-image: url("/static/img/img2.jpg");
-    animation-delay: 10s; }
-
-  .slideshow li:nth-child(3) {
-    background-image: url("/static/img/img3.jpg");
-    animation-delay: 20s; }
-
-  .slideshow li:nth-child(4) {
-    background-image: url("/static/img/img4.jpg");
-    animation-delay: 30s; }
-
-  .slideshow li:nth-child(5) {
-    background-image: url("/static/img/img5.jpg");
-    animation-delay: 40s; }
-
-  .slideshow li:nth-child(6) {
-    background-image: url("/static/img/img6.jpg");
-    animation-delay: 50s; }
-
-  .slideshow li:nth-child(7) {
-    background-image: url("/static/img/img7.jpg");
-    animation-delay: 60s; }
-
-  .slideshow li:nth-child(8) {
-    background-image: url("/static/img/img8.jpg");
-    animation-delay: 70s; } }
-@keyframes imageAnimation {
-  0% {
-    opacity: 0;
-    animation-timing-function: ease-in; }
-  10% {
-    opacity: 1;
-    animation-timing-function: ease-out; }
-  20% {
-    opacity: 1; }
-  30% {
-    opacity: 0; } }
-/* Older browser support - .no-cssanimations class added by modernizr */
-.no-cssanimations .slideshow li {
-  opacity: 1; }
-
-.mobile-outer-bg {
-  background: #141E30;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to bottom, #243B55, #141E30);
-  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to bottom, #243B55, #141E30);
-  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh; }
-
-.logo {
-  font-family: 'Holtwood One SC', serif;
-  font-size: 1.5em;
-  color: white; }
-
-.navbar {
-  background-color: #243B55;
-  margin-bottom: 20px; }
-  .navbar a:link {
-    text-decoration: none;
-    color: white; }
-  .navbar a:visited {
-    text-decoration: none;
-    color: white; }
-
-.container {
-  position: relative;
-  top: 0; }
-  .container .mobile-instruct {
-    font-family: serif, cursive; }
-    .container .mobile-instruct .fa-thumbs-down {
-      font-size: 3.5em;
-      margin-top: 65px; }
-    .container .mobile-instruct h1 {
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
-      font-size: 3em;
-      margin-bottom: 50px; }
-    .container .mobile-instruct img {
-      margin: 50px 0 0px 0; }
-    .container .mobile-instruct h2:first-of-type {
-      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, cursive;
-      font-size: 2.3em;
-      margin-bottom: 48px;
-      line-height: 45px; }
-    .container .mobile-instruct h2 {
-      font-size: 1.5em;
-      margin: 15px 0;
-      list-style-position: inside; }
-    .container .mobile-instruct p {
-      text-align: left;
-      font-size: 1.5em; }
-    .container .mobile-instruct h2:last-of-type {
-      margin-bottom: 178px; }
-    .container .mobile-instruct .btn {
-      font-weight: bold; }
-    .container .mobile-instruct .anchor {
-      position: absolute;
-      top: 507px;
-      left: 22px; }
-    .container .mobile-instruct .mover-box {
-      -webkit-transition: max-height 1s;
-      -moz-transition: max-height 1s;
-      -ms-transition: max-height 1s;
-      -o-transition: max-height 1s;
-      transition: max-height 1s;
-      overflow: hidden;
-      position: absolute;
-      bottom: 58px;
-      display: none;
-      left: 21px;
-      width: 89%;
-      margin: 0 auto 20px auto;
-      height: 280px;
-      background-color: silver;
-      color: #003056;
-      border-radius: 10px;
-      padding-bottom: 15px; }
-      .container .mobile-instruct .mover-box h1 {
-        padding: 5px;
-        color: #003056;
-        margin-bottom: 10px; }
-      .container .mobile-instruct .mover-box h2:first-of-type {
-        font-family: serif, cursive;
-        font-size: 1.5em;
-        line-height: 1em;
-        margin: 15px 0; }
-    .container .mobile-instruct .how-answer {
-      padding: 20px; }
-      .container .mobile-instruct .how-answer p {
-        margin-bottom: 5px; }
-        .container .mobile-instruct .how-answer p span {
-          color: #C00; }
-    .container .mobile-instruct button {
-      background-color: white;
-      border-radius: 3px;
-      color: #495057;
-      width: 100%;
-      margin-bottom: 20px; }
-      .container .mobile-instruct button:active {
-        background-color: #6C6E58;
-        color: #F2D03B; }
-    .container .mobile-instruct .btn-l {
-      margin-left: 7px; }
-    .container .mobile-instruct .btn-r {
-      padding-right: 21px; }
-  .container .user-input {
-    z-index: 2;
-    position: relative;
-    padding: 20px;
-    margin-top: 10%;
-    font-family: 'Holtwood One SC', serif;
-    font-weight: 900;
-    color: white;
-    text-shadow: 5px 5px 4px #292828; }
-    .container .user-input h1 {
-      font-size: 8em;
-      margin-top: 20px; }
-    .container .user-input h2 {
-      color: #f0efef;
-      margin-top: 20px;
-      font-size: 2em; }
-    .container .user-input .error-box {
-      max-height: 80px;
-      width: 60%;
-      margin: 0 auto;
-      font-size: 1em;
-      color: #c00;
-      text-shadow: none;
-      background-color: white;
-      border-radius: 5px; }
-    .container .user-input .row {
-      margin-top: 10px; }
-    .container .user-input .select-desc {
-      text-shadow: 2px 2px #292828; }
-    .container .user-input .selects {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
-    .container .user-input .btn {
-      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-      background-color: #243B55;
-      height: 50px;
-      color: white;
-      font-size: 1.2em; }
-    .container .user-input .network {
-      margin-top: -10px;
-      margin-bottom: 100px; }
-  .container .blue-btn {
-    background-color: #243B55;
-    color: white;
-    margin-top: 10px; }
-  .container #baseball {
-    display: none; }
-  .container #soccer {
-    display: none; }
-  .container #hockey {
-    display: none; }
-  .container #basketball {
-    display: none; }
-  .container .graph-title {
-    font-size: 1.2em;
-    color: #243B55;
-    margin-top: 10px; }
-
-@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  .large, .medium {
-    display: none; }
-
-  .container {
-    color: white; } }
-@media only screen and (min-device-width: 481px) and (max-device-width: 1023px) {
-  .small, .large {
-    display: none; }
-
-  .container .graph-title {
-    font-size: 1.6em; } }
-@media only screen and (min-device-width: 1024px) {
-  .small, .tablet {
-    display: none; }
-
-  .container .graph-title {
-    font-size: 2em; } }
-
-/*# sourceMappingURL=base.css.map */
+Backtrace:
+./disappointed_fan_app/static/disappointed_fan_app/styles/base.scss:178
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1278:in `expected'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1208:in `expected'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:1203:in `tok!'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:677:in `block'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:686:in `block_contents'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:678:in `block'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:689:in `block_contents'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:678:in `block'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:747:in `declaration_or_ruleset'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:697:in `block_child'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:689:in `block_contents'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:678:in `block'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:670:in `ruleset'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:696:in `block_child'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:689:in `block_contents'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:137:in `stylesheet'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/scss/parser.rb:41:in `parse'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/engine.rb:414:in `_to_tree'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/engine.rb:389:in `_render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/engine.rb:307:in `render_with_sourcemap'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:462:in `update_stylesheet'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `each'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:443:in `on_file_changed'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.6/lib/sass/plugin/compiler.rb:320:in `block in watch'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/config.rb:23:in `call'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:115:in `_process_changes'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:19:in `block in loop_for'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/processor.rb:15:in `loop_for'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:84:in `_wait_for_changes'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/event/loop.rb:42:in `block in setup'
+C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-listen-4.0.0/lib/sass-listen/internals/thread_pool.rb:6:in `block in add'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"    1px 1px 0 #000\": expected \"{\", was \";\"\A         on line 178 of ./disappointed_fan_app/static/disappointed_fan_app/styles/base.scss\A \A 173:         .select-desc{\A 174:             // text-shadow: 2px 2px 2px #292828; text-shadow:\A 175:    -1px -1px 0 #000,  \A 176:    1px -1px 0 #000,\A 177:    -1px 1px 0 #000,\A 178:     1px 1px 0 #000;\A 179:         }\A 180:         .selects{\A 181:             font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;\A 182:         }\A 183: "; }

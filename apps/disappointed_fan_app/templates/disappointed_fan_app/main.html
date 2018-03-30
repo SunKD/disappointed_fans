@@ -1,6 +1,6 @@
 {% extends 'disappointed_fan_app/base.html' %} {% block content %}
-<nav class="navbar">
-    <h3 class="logo"><a href="/">ESDN</a></h3>
+<nav class="navbar navbar-light" style="background-color: #243B55;">
+    <h3 class="logo">ESDN</h3>
     <a href="/">
         <p class="far fa-question-circle ml-auto logo"></p>
     </a>
@@ -82,14 +82,14 @@
             <div class="row">
                 <div class="col-12 hidden-md-down">
                     <div class="twitterfeed large">
-                        <a class="twitter-timeline" data-width="300" data-height="450" href="https://twitter.com/TwitterSports?ref_src=twsrc%5Etfw">Tweets by TwitterSports</a>
+                        <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/TwitterSports?ref_src=twsrc%5Etfw">Tweets by TwitterSports</a>
                         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                     </div>
                 </div>
             </div>
         </div>
         <div class="content col-md-8 col-12">
-            <h2 class="graph-title col-12 tac">#{{select1}} #{{select2}} #{{curse}}</h2>
+            <h2 class="graph-title col-md-col-12 tac">#{{select1}} #{{select2}} {{curse}}</h2>
             <div class="graph-wrapper m20">
                 <div id="viz"></div>
             </div>
