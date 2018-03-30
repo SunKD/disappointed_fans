@@ -4,7 +4,14 @@
         <form action="process" method="POST" class="center">
             {% csrf_token %}
             <h1 class="tac">ESDN</h1>
-            <h2 class="tac">Entertainment Sports Disappointment Network</h2>
+            <div class="row">
+                <div class="col-2"></div>
+                <h2 class="col-10">Entertainment Sports</h2>
+            </div>
+            <div class="row">
+                <div class="col-4"></div>
+                <h2 class="col-8 network">Disappointment Network</h2>
+            </div>
             <div class="error-box">
                 {% if messages %}
                 <div class="tac">
@@ -47,7 +54,7 @@
                         <div class="col-12">
                             <div class="" id="none">
                                 <select class="selectpicker form-control" name="team">
-                                    <option disabled selected value>Choose a Sport First:</option>
+                                    <option disabled selected value>Choose a Sport First</option>
                                 </select>
                             </div>
                             <div class="" id="baseball">
@@ -60,7 +67,7 @@
                             </div>
                             <div class="" id="soccer">
                                 <select class="selectpicker form-control" name="team">
-                                    <option disabled selected value>Select a Team:</option>
+                                    <option disabled selected value>Select a Team</option>
                                     {% for team in context.Soccer %}
                                         <option>{{team.name}}</option>
                                     {% endfor %}
@@ -68,7 +75,7 @@
                             </div>
                             <div class="" id="hockey">
                                 <select class="selectpicker form-control" name="team">
-                                    <option disabled selected value>Select a Team:</option>
+                                    <option disabled selected value>Select a Team</option>
                                     {% for team in context.Hockey %}
                                         <option>{{team.name}}</option>
                                     {% endfor %}
@@ -76,8 +83,8 @@
                             </div>
                             <div class="" id="basketball">
                                 <select class="selectpicker form-control" name="team">
-                                    <option disabled selected value>Select a Team:</option>
-                                    {% for team in context.basketball %}
+                                    <option disabled selected value>Select a Team</option>
+                                    {% for team in context.Basketball %}
                                         <option>{{team.name}}</option>
                                     {% endfor %}
                                 </select>

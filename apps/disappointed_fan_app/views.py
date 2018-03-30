@@ -62,7 +62,7 @@ def process_main(request):
     print "In Process_Main Route"
     response = UserSearch.objects.user_input_validator(request.POST)
     context = {
-        "curse": request.POST.get('main_curse'),
+        "curse": "#" + request.POST.get('main_curse'),
         "select1": request.POST.get('select1'),
         "select2": request.POST.get('select2'),
         "page": "main",
