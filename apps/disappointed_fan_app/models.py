@@ -36,7 +36,6 @@ class UserSearchManager(models.Manager):
         for word in banned_words:
             if word == search_data:
                 errors['banned_word'] = "Seriously? That's not why we're here. Try a less friendly keyword."
-        print "Sport -", sport
         if sport == "invalid":
             errors['select_sport'] = "Please choose a sport."
         # if team == NULL:
@@ -46,7 +45,6 @@ class UserSearchManager(models.Manager):
             validate_response['errors'] = errors
         else:
             validate_response['status'] = True
-        print "Validate Response Object", validate_response
         return validate_response
 
     def reject_word(self):

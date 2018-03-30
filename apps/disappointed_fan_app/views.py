@@ -19,8 +19,6 @@ from models import UserSearch, Team, Sport
 
 def index(request):
     # twitter_hello()
-    print "In Index Route"
-    print Team.objects.all()
     context = {
         "context": {
             "Baseball" : Team.objects.filter(sport_id = 1),
@@ -35,7 +33,6 @@ def index(request):
         return render(request, 'disappointed_fan_app/index_desktop.html', context)
 
 def process(request):
-    print "In Process Route"
     response = UserSearch.objects.user_input_validator(request.POST)
     context={
         "curse": "#" + request.POST['index_curse'],
@@ -55,11 +52,9 @@ def process(request):
             messages.error(request, error)
         return render(request, 'disappointed_fan_app/index_desktop.html', context)
     else:
-        print "in process valid response"
         return render(request, 'disappointed_fan_app/main.html', context)
 
 def process_main(request):
-    print "In Process_Main Route"
     response = UserSearch.objects.user_input_validator(request.POST)
     context = {
         "curse": "#" + request.POST.get('main_curse'),
@@ -79,11 +74,9 @@ def process_main(request):
             messages.error(request, error)
         return render(request, 'disappointed_fan_app/main.html', context)
 
-    print "Context", context['context']
     return render(request, 'disappointed_fan_app/main.html', context)
 
 def main(request):
-    print "In Main route"
     return render(request, 'disappointed_fan_app/main.html')
 
 def data_json(request):
@@ -100,14 +93,14 @@ def data_json(request):
         "2018-02-07"],
     "data": [90, 322, 152, 136, 532, 512, 169]
     }
-    
+
     tags_data = search_tweet(request.session['curse'])
     response_data = {}
     response_data['result'] = 'ok'
     response_data['message'] = 'Successfully'
     response_data['data'] = tags_data
     return HttpResponse(json.dumps(tags_data), content_type="application/json")
-    
+
     response_data = {}
     response_data['result'] = 'error'
     return HttpResponse(json.dumps(response_data), content_type="application/json")
@@ -131,9 +124,9 @@ def twitter2():
         # print results
 
         for i in range(0, len(results)):
-            print results[i].created_at, " - created_at"
-            print results[i].hashtags, " - hashtags"
-            print results[i].text, " - text"
+            # print results[i].created_at, " - created_at"
+            # print results[i].hashtags, " - hashtags"
+            # print results[i].text, " - text"
             # Tw_Data.save_data(results[i].hashtags,
             #     results[i].created_at,
             #     results[i].text)
@@ -141,8 +134,8 @@ def twitter2():
             hashtags = results[i].hashtags
             created_at_tw = results[i].created_at
             text = results[i].text
-            Tw_Data.objects.create(hashtags = hashtags, 
-                created_at_tw = created_at_tw, 
+            Tw_Data.objects.create(hashtags = hashtags,
+                created_at_tw = created_at_tw,
                 text = text)
 
 def search_tweet(keyword):
@@ -162,8 +155,8 @@ def save_tweet_search(results):
         hashtags = results[i].hashtags
         created_at_tw = results[i].created_at
         text = results[i].text
-        Tw_Data.objects.create(hashtags = hashtags, 
-            created_at_tw = created_at_tw, 
+        Tw_Data.objects.create(hashtags = hashtags,
+            created_at_tw = created_at_tw,
             text = text)
 
 def generate_data(keyword, results):
@@ -188,7 +181,7 @@ def generate_data(keyword, results):
         #     print counter
         #     datas['datetweet'].append(datekey)
         #     datas['data'].append(counter)
-        
+
         counter += 1
         if not datekey in count_by_date:
             counter = 0
@@ -208,7 +201,7 @@ def generate_data(keyword, results):
             datas['data'].append(0)
 
     return datas
-    
+
 
 def twitter_hello():
     auth = tweepy.OAuthHandler(twitter_credentials.consumer_key, twitter_credentials.consumer_secret)

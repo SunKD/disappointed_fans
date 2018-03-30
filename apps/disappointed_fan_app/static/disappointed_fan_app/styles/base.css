@@ -322,11 +322,6 @@ img {
       margin-left: 7px; }
     .container .mobile-instruct .btn-r {
       padding-right: 21px; }
-  .container .sidebar .row {
-    margin-top: 10px; }
-  .container .sidebar .twitterfeed {
-    margin: 0 auto;
-    padding: 0 0 0 25px; }
   .container .user-input {
     z-index: 2;
     position: relative;
@@ -354,8 +349,6 @@ img {
       border-radius: 5px; }
     .container .user-input .row {
       margin-top: 10px; }
-    .container .user-input .select-desc {
-      text-shadow: 2px 2px 2px #292828; }
     .container .user-input .selects {
       font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
     .container .user-input .btn {
