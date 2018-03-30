@@ -27,17 +27,15 @@ class UserSearchManager(models.Manager):
         else:
             search_data = postData.get("main_curse")
         sport = postData.get('sport')
-        print 'search Keyword - ', search_data
         errors = {}
         if search_data == None:
             errors['need_data'] = "Please enter a valid keyword - must be at least 1 character long."
         elif not SEARCH_DATA_RE.match(search_data):
             errors['bad_characters'] = "Please enter a valid keyword - no special characters and leave off the #."
-        banned_words = ['fun', 'rainbow', 'happy', 'excited', 'satisfied', 'puppies', 'kittens', ]
+        banned_words = ['fun', 'rainbow', 'happy', 'excited', 'satisfied', 'puppies', 'kittens', 'joy', 'winners', 'winning', 'win', 'rainbows']
         for word in banned_words:
             if word == search_data:
                 errors['banned_word'] = "Seriously? That's not why we're here. Try a less friendly keyword."
-        print "Sport -", sport
         if sport == "invalid":
             errors['select_sport'] = "Please choose a sport."
         # if team == NULL:
@@ -47,7 +45,6 @@ class UserSearchManager(models.Manager):
             validate_response['errors'] = errors
         else:
             validate_response['status'] = True
-        print "Validate Response Object", validate_response
         return validate_response
 
     def reject_word(self):
@@ -86,18 +83,18 @@ class Team(models.Model):
         return "Team = name: {} - created_at: {}".format(self.name, self.created_at)
 class Tw_DataManager(models.Manager):
     def save_data(self, hashtags, created_at_tw, text):
-        Tw_Data.objects.create(hashtags = hashtags, 
-            created_at_tw = created_at_tw, 
+        Tw_Data.objects.create(hashtags = hashtags,
+            created_at_tw = created_at_tw,
             text = text)
         return True
-        
+
 class Tw_Data(models.Model):
     hashtags = models.CharField(max_length=255, null=True)
     created_at_tw = models.CharField(max_length=255)
     text = models.TextField()
-    
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     objects = Tw_DataManager()
-    
+

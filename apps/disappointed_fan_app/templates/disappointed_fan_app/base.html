@@ -21,8 +21,17 @@
         crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Playball|Unica+One|Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bungee|Bungee+Shade|Holtwood+One+SC|Mirza|Russo+One|Ultra" rel="stylesheet">
-    <script src="{% static '/disappointed_fan_app/js/d3.min.js' %}"></script>
+  
+    <!-- <script src="{% static '/disappointed_fan_app/js/d3.min.js' %}"></script> -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="{% static '/disappointed_fan_app/js/script.js' %}"></script>
+    <style>
+
+        .axis .domain {
+          display: none;
+        }
+        
+        </style>
     <title>Disappointed Fan</title>
 </head>
 <body>

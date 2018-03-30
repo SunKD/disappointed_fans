@@ -122,7 +122,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# User Screen detection 
+# User Screen detection
 # Cache backend is optional, but recommended to speed up user agent parsing
 # https://pypi.python.org/pypi/django-user_agents
 # CACHES = {
