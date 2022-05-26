@@ -52,7 +52,7 @@ swampy==2.1.7
 traitlets==4.3.2
 tweepy==3.6.0
 tweetpy==0.1
-Twisted==17.9.0
+Twisted==22.4.0
 ua-parser==0.7.3
 urllib3==1.22
 user-agents==1.1.0
